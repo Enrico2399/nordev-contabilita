@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nordev Contabilità - Dash</title>
+  <title>Nordev Contabilità Dashboard</title>
   <style>
     :root {
       --bg: #0f172a;
@@ -18,159 +18,353 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background-color: var(--bg); color: var(--text); padding: 12px; }
 
-    header { margin-bottom: 16px; text-align: center; padding-top: 8px; }
+    header { margin-bottom: 14px; text-align: center; }
     h1 { font-size: 1.3rem; color: var(--accent); font-weight: 700; }
     p.sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
 
     /* Navigation Tabs */
-    .tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 16px; scrollbar-width: none; }
+    .tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px; scrollbar-width: none; }
     .tabs::-webkit-scrollbar { display: none; }
-    .tab-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 8px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; cursor: pointer; }
+    .tab-btn { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-muted); padding: 8px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; cursor: pointer; }
     .tab-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 
-    /* Sections & Cards */
     .section-page { display: none; }
     .section-page.active { display: block; }
 
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
-    .card-title { font-size: 0.95rem; color: var(--accent); margin-bottom: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    /* Grid & Cards */
+    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+    .kpi-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+    .kpi-title { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+    .kpi-val { font-size: 1.1rem; font-weight: 700; color: var(--green); margin-top: 4px; }
 
-    /* Data Items / Lists */
-    .data-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 0.88rem; }
-    .data-row:last-child { border-bottom: none; }
-    .data-label { color: var(--text); font-weight: 500; }
-    .data-val { font-weight: 700; color: var(--green); }
-    .code { font-size: 0.75rem; background: #334155; padding: 2px 6px; border-radius: 4px; color: var(--accent); margin-right: 6px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+    .card-title { font-size: 0.9rem; color: var(--accent); margin-bottom: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    /* Table Styles for Journal */
-    .journal-entry { background: #0f172a; border-radius: 8px; padding: 10px; margin-bottom: 10px; border-left: 3px solid var(--accent); }
-    .journal-header { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 6px; }
-    .journal-desc { font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; }
-    .journal-amounts { display: flex; gap: 12px; font-size: 0.85rem; }
-    .amount-dare { color: #38bdf8; }
-    .amount-avere { color: #f43f5e; }
+    /* Tables */
+    .mini-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .mini-table th, .mini-table td { padding: 8px 6px; text-align: left; border-bottom: 1px solid var(--border); }
+    .mini-table th { color: var(--text-muted); font-weight: 600; font-size: 0.75rem; }
+    .mini-table td.num { text-align: right; font-weight: 600; }
+    .mini-table tr:last-child td { border-bottom: none; }
+
+    .code { font-size: 0.72rem; background: #334155; padding: 2px 5px; border-radius: 4px; color: var(--accent); }
+    .badge-quadra { background: rgba(74, 222, 128, 0.2); color: var(--green); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Nordev Contabilità</h1>
-    <p class="sub">Bozza v02 • Dati Bilancio 2026</p>
+    <p class="sub">Estratto Sintetico • Bozza v02</p>
   </header>
 
-  <!-- TAB SELECTION -->
+  <!-- TAB NAVIGATION -->
   <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('ce')">Conto Economico</button>
-    <button class="tab-btn" onclick="showTab('giornale')">Libro Giornale</button>
-    <button class="tab-btn" onclick="showTab('situazione')">Situazione Contabile</button>
+    <button class="tab-btn active" onclick="showTab('dashboard', this)">Dashboard</button>
+    <button class="tab-btn" onclick="showTab('sp', this)">Stato Patrimoniale</button>
+    <button class="tab-btn" onclick="showTab('ce', this)">Conto Economico</button>
+    <button class="tab-btn" onclick="showTab('giornale', this)">Libro Giornale</button>
+    <button class="tab-btn" onclick="showTab('piano', this)">Piano dei Conti</button>
   </div>
 
-  <!-- TAB 1: CONTO ECONOMICO OPERATIVO -->
-  <div id="ce" class="section-page active">
-    <div class="card">
-      <div class="card-title">Ricavi Operativi (2026)</div>
-      <div class="data-row">
-        <div><span class="code">50.1</span><span class="data-label">Sviluppo Software</span></div>
-        <div class="data-val">€ 2.500,00</div>
+  <!-- TAB 1: DASHBOARD / SINTESI -->
+  <div id="dashboard" class="section-page active">
+    <div class="kpi-grid">
+      <div class="kpi-box">
+        <div class="kpi-title">Ricavi Totali</div>
+        <div class="kpi-val">€ 2.500</div>
       </div>
-      <div class="data-row">
-        <div><span class="code">50.2</span><span class="data-label">Sviluppo Siti Web</span></div>
-        <div class="data-val" style="color:var(--text-muted)">€ 0,00</div>
+      <div class="kpi-box">
+        <div class="kpi-title">Costi Totali</div>
+        <div class="kpi-val" style="color:var(--text-muted)">€ 0</div>
       </div>
-      <div class="data-row">
-        <div><span class="code">50.3</span><span class="data-label">Sviluppo App</span></div>
-        <div class="data-val" style="color:var(--text-muted)">€ 0,00</div>
+      <div class="kpi-box">
+        <div class="kpi-title">Cassa Contanti</div>
+        <div class="kpi-val">€ 2.500</div>
       </div>
-      <div class="data-row">
-        <div><span class="code">50.4</span><span class="data-label">Consulenza Informagica</span></div>
-        <div class="data-val" style="color:var(--text-muted)">€ 0,00</div>
+      <div class="kpi-box">
+        <div class="kpi-title">Quadratura</div>
+        <div class="kpi-val" style="font-size:0.95rem;"><span class="badge-quadra">QUADRA</span></div>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-title">Riepilogo Totali</div>
-      <div class="data-row">
-        <span class="data-label">Totale Valore Produzione</span>
-        <span class="data-val">€ 2.500,00</span>
-      </div>
-      <div class="data-row">
-        <span class="data-label">Totale Costi Produzione</span>
-        <span class="data-val" style="color:var(--text-muted)">€ 0,00</span>
-      </div>
-      <div class="data-row" style="margin-top:6px; padding-top:8px; border-top: 1px solid var(--border);">
-        <span class="data-label" style="font-weight:700;">Margine Operativo Lordo</span>
-        <span class="data-val" style="font-size:1.05rem;">€ 2.500,00</span>
-      </div>
+      <div class="card-title">Ultime Operazioni</div>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrizione</th>
+            <th style="text-align:right">Importo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>17/09/26</td>
+            <td>Vendita preventivatore Gabriele</td>
+            <td class="num" style="color:var(--accent)">€ 2.500</td>
+          </tr>
+          <tr>
+            <td>20/09/26</td>
+            <td>Pagamento preventivatore (Incasso)</td>
+            <td class="num" style="color:var(--green)">€ 2.500</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- TAB 2: LIBRO GIORNALE -->
+  <!-- TAB 2: STATO PATRIMONIALE -->
+  <div id="sp" class="section-page">
+    <div class="card">
+      <div class="card-title">Attivo (2026 - 2028)</div>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Voce</th>
+            <th style="text-align:right">2026</th>
+            <th style="text-align:right">2027</th>
+            <th style="text-align:right">2028</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Crediti v/Soci</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>Immobilizzazioni Immateriali</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>Immobilizzazioni Materiali</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>Attivo Circolante (Cassa)</td>
+            <td class="num" style="color:var(--green)">€ 2.500</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Passivo e Patrimonio Netto</div>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Voce</th>
+            <th style="text-align:right">2026</th>
+            <th style="text-align:right">2027</th>
+            <th style="text-align:right">2028</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Patrimonio Netto</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>Fondi per Rischi e Oneri</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>Trattamento Fine Rapporto (TFR)</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>Debiti</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB 3: CONTO ECONOMICO -->
+  <div id="ce" class="section-page">
+    <div class="card">
+      <div class="card-title">A) Valore della Produzione</div>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Cod.</th>
+            <th>Voce Ricavo</th>
+            <th style="text-align:right">Importo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code">50.1</span></td>
+            <td>Ricavi sviluppo software</td>
+            <td class="num" style="color:var(--green)">€ 2.500</td>
+          </tr>
+          <tr>
+            <td><span class="code">50.2</span></td>
+            <td>Ricavi sviluppo siti web</td>
+            <td class="num">€ 0</td>
+          </tr>
+          <tr>
+            <td><span class="code">50.3</span></td>
+            <td>Ricavi sviluppo applicazioni</td>
+            <td class="num">€ 0</td>
+          </tr>
+          <tr>
+            <td><span class="code">50.4</span></td>
+            <td>Ricavi consulenza informatica</td>
+            <td class="num">€ 0</td>
+          </tr>
+          <tr>
+            <td><span class="code">50.5</span></td>
+            <td>Assistenza e manutenzione</td>
+            <td class="num">€ 0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">B) Costi della Produzione</div>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Voce Costo</th>
+            <th style="text-align:right">Importo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Materie prime e consumo</td>
+            <td class="num">€ 0</td>
+          </tr>
+          <tr>
+            <td>Cancelleria e materiale d'ufficio</td>
+            <td class="num">€ 0</td>
+          </tr>
+          <tr>
+            <td>Materiale informatico di consumo</td>
+            <td class="num">€ 0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB 4: LIBRO GIORNALE -->
   <div id="giornale" class="section-page">
     <div class="card">
-      <div class="card-title">Registrazioni Contabili</div>
-
-      <div class="journal-entry">
-        <div class="journal-header">
-          <span>Op. #1 • 17/09/2026</span>
-          <span class="code">14.1 / 50.1</span>
-        </div>
-        <div class="journal-desc">Vendita preventivatore Gabriele</div>
-        <div class="journal-amounts">
-          <div>Crediti v/clienti (Dare): <span class="amount-dare">€ 2.500,00</span></div>
-        </div>
-      </div>
-
-      <div class="journal-entry">
-        <div class="journal-header">
-          <span>Op. #2 • 20/09/2026</span>
-          <span class="code">15.3 / 14.1</span>
-        </div>
-        <div class="journal-desc">Pagamento preventivatore Gabriele</div>
-        <div class="journal-amounts">
-          <div>Cassa Contanti (Dare): <span class="amount-dare">€ 2.500,00</span></div>
-        </div>
-      </div>
+      <div class="card-title">Dettaglio Movimenti</div>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Cod. / Conto</th>
+            <th style="text-align:right">Dare</th>
+            <th style="text-align:right">Avere</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: rgba(56, 189, 248, 0.05)">
+            <td colspan="3" style="font-weight:700; color:var(--accent)">Op. #1 - 17/09/2026 (Vendita)</td>
+          </tr>
+          <tr>
+            <td><span class="code">14.1</span> Crediti v/clienti</td>
+            <td class="num">€ 2.500</td>
+            <td class="num">-</td>
+          </tr>
+          <tr>
+            <td><span class="code">50.1</span> Ricavi sviluppo sw</td>
+            <td class="num">-</td>
+            <td class="num">€ 2.500</td>
+          </tr>
+          <tr style="background: rgba(56, 189, 248, 0.05)">
+            <td colspan="3" style="font-weight:700; color:var(--accent)">Op. #2 - 20/09/2026 (Incasso)</td>
+          </tr>
+          <tr>
+            <td><span class="code">15.3</span> Cassa contanti</td>
+            <td class="num">€ 2.500</td>
+            <td class="num">-</td>
+          </tr>
+          <tr>
+            <td><span class="code">14.1</span> Crediti v/clienti</td>
+            <td class="num">-</td>
+            <td class="num">€ 2.500</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- TAB 3: SITUAZIONE CONTABILE -->
-  <div id="situazione" class="section-page">
+  <!-- TAB 5: PIANO DEI CONTI -->
+  <div id="piano" class="section-page">
     <div class="card">
-      <div class="card-title">Saldi Attivi / Liquidità</div>
-      <div class="data-row">
-        <div><span class="code">15.3</span><span class="data-label">Cassa Contanti</span></div>
-        <div class="data-val">€ 2.500,00</div>
-      </div>
-      <div class="data-row">
-        <div><span class="code">14.1</span><span class="data-label">Crediti v/Clienti</span></div>
-        <div class="data-val" style="color:var(--text-muted)">€ 0,00</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Verifica Quadratura</div>
-      <div class="data-row">
-        <span class="data-label">Totale Dare</span>
-        <span class="data-val">€ 5.000,00</span>
-      </div>
-      <div class="data-row">
-        <span class="data-label">Totale Avere</span>
-        <span class="data-val">€ 5.000,00</span>
-      </div>
-      <div class="data-row" style="margin-top:4px;">
-        <span class="data-label">Stato Quadratura</span>
-        <span class="data-val" style="color:var(--accent);">QUADRA</span>
-      </div>
+      <div class="card-title">Estratto Piano dei Conti</div>
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Cod.</th>
+            <th>Conto</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code">10.1</span></td>
+            <td>Costi di impianto e ampliamento</td>
+            <td>Attivo</td>
+          </tr>
+          <tr>
+            <td><span class="code">10.2</span></td>
+            <td>Costi di sviluppo</td>
+            <td>Attivo</td>
+          </tr>
+          <tr>
+            <td><span class="code">10.3</span></td>
+            <td>Software di proprietà</td>
+            <td>Attivo</td>
+          </tr>
+          <tr>
+            <td><span class="code">14.1</span></td>
+            <td>Crediti verso clienti</td>
+            <td>Attivo</td>
+          </tr>
+          <tr>
+            <td><span class="code">15.3</span></td>
+            <td>Cassa contanti</td>
+            <td>Attivo</td>
+          </tr>
+          <tr>
+            <td><span class="code">50.1</span></td>
+            <td>Ricavi da sviluppo software</td>
+            <td>Ricavo</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
   <script>
-    function showTab(tabId) {
+    function showTab(tabId, btn) {
       document.querySelectorAll('.section-page').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
       
       document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+      btn.classList.add('active');
     }
   </script>
 </body>
