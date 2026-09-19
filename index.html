@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nordev Contabilità - Visualizzatore</title>
+  <!-- CDN SheetJS per parsing file Excel -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-color: #0f172a;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 12px;
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
+
+    .file-upload {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input[type="file"] {
+      font-size: 0.9rem;
+      padding: 8px;
+      border: 1px dashed var(--primary-color);
+      border-radius: 6px;
+      background: #eff6ff;
+    }
+
+    .search-container {
+      margin-top: 10px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-color);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+      background: #e2e8f0;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--primary-color);
+      color: #fff;
+    }
+
+    .table-container {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow-x: auto;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      max-height: calc(100vh - 220px);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    th {
+      background: #f1f5f9;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .empty-state {
+      padding: 40px;
+      text-align: center;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nordev Contabilità</h1>
+    <div class="file-upload">
+      <input type="file" id="excelFile" accept=".xlsx, .xls" />
+    </div>
+    <div class="search-container" id="searchBox" style="display: none;">
+      <input type="text" id="searchInput" class="search-input" placeholder="Cerca nel foglio corrente..." onkeyup="filterTable()" />
+    </div>
+  </header>
+
+  <div class="tabs" id="tabsHeader"></div>
+
+  <div class="table-container" id="tableContainer">
+    <div class="empty-state">Carica il file Excel <code>Nordev_Contabilità_bozza_v02.xlsx</code> per iniziare la visualizzazione.</div>
+  </div>
+
+  <script>
+    let workbookData = {};
+    let activeSheet = "";
+
+    document.getElementById('excelFile').addEventListener('change', handleFile, false);
+
+    function handleFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        
+        workbookData = {};
+        workbook.SheetNames.forEach(sheetName => {
+          const worksheet = workbook.Sheets[sheetName];
+          workbookData[sheetName] = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" });
+        });
+
+        renderTabs(workbook.SheetNames);
+        document.getElementById('searchBox').style.display = 'block';
+        if (workbook.SheetNames.length > 0) {
+          switchSheet(workbook.SheetNames[0]);
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    function renderTabs(sheets) {
+      const tabsHeader = document.getElementById('tabsHeader');
+      tabsHeader.innerHTML = '';
+      sheets.forEach((sheet, idx) => {
+        const btn = document.createElement('button');
+        btn.className = `tab-btn ${idx === 0 ? 'active' : ''}`;
+        btn.innerText = sheet;
+        btn.onclick = () => switchSheet(sheet);
+        tabsHeader.appendChild(btn);
+      });
+    }
+
+    function switchSheet(sheetName) {
+      activeSheet = sheetName;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText === sheetName);
+      });
+      document.getElementById('searchInput').value = '';
+      renderTable(workbookData[sheetName]);
+    }
+
+    function renderTable(rows) {
+      const container = document.getElementById('tableContainer');
+      if (!rows || rows.length === 0) {
+        container.innerHTML = '<div class="empty-state">Nessun dato presente in questo foglio.</div>';
+        return;
+      }
+
+      let html = '<table id="dataTable">';
+      rows.forEach((row, rowIndex) => {
+        if (row.every(cell => cell === "")) return; // Salta righe totalmente vuote
+        
+        html += '<tr>';
+        row.forEach(cell => {
+          if (rowIndex === 0) {
+            html += `<th>${cell}</th>`;
+          } else {
+            html += `<td>${cell}</td>`;
+          }
+        });
+        html += '</tr>';
+      });
+      html += '</table>';
+      container.innerHTML = html;
+    }
+
+    function filterTable() {
+      const filter = document.getElementById('searchInput').value.toLowerCase();
+      const table = document.getElementById('dataTable');
+      if (!table) return;
+
+      const trs = table.getElementsByTagName('tr');
+      for (let i = 1; i < trs.length; i++) {
+        let textMatch = false;
+        const tds = trs[i].getElementsByTagName('td');
+        for (let j = 0; j < tds.length; j++) {
+          if (tds[j].innerText.toLowerCase().includes(filter)) {
+            textMatch = true;
+            break;
+          }
+        }
+        trs[i].style.display = textMatch ? '' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>
