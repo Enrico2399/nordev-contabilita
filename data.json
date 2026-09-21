@@ -1,0 +1,3216 @@
+{
+  "meta": {
+    "progetto": "Nordev — Contabilità",
+    "fonteIniziale": "Nordev_Contabilità_bozza_v02.xlsx",
+    "creato": "2026-09-20",
+    "aggiornato": "2026-09-21"
+  },
+  "piano": [
+    {
+      "codice": 10,
+      "conto": "IMMOBILIZZAZIONI IMMATERIALI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 10.1,
+      "conto": "Costi di impianto e ampliamento",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 10.2,
+      "conto": "Costi di sviluppo",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 10.3,
+      "conto": "Software di proprietà",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 10.4,
+      "conto": "Diritti di brevetto e opere dell'ingegno",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 10.5,
+      "conto": "Concessioni, licenze e marchi",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 10.6,
+      "conto": "Altre immobilizzazioni immateriali",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 10.9,
+      "conto": "Fondo ammortamento immobilizzazioni immateriali",
+      "tipo": "Attivo rettificativo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 11,
+      "conto": "IMMOBILIZZAZIONI MATERIALI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 11.1,
+      "conto": "Macchine elettroniche e hardware",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 11.2,
+      "conto": "Attrezzature",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 11.3,
+      "conto": "Mobili e arredi",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 11.4,
+      "conto": "Impianti",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 11.5,
+      "conto": "Altri beni materiali",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 12,
+      "conto": "Fondo ammortamento immobilizzazioni materiali",
+      "tipo": "Attivo rettificativo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 12,
+      "conto": "IMMOBILIZZAZIONI FINANZIARIE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 12.1,
+      "conto": "Partecipazioni",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 12.2,
+      "conto": "Crediti finanziari immobilizzati",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 13,
+      "conto": "RIMANENZE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 13.1,
+      "conto": "Rimanenze di prodotti e lavori in corso",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 13.2,
+      "conto": "Rimanenze di materiali di consumo",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 14,
+      "conto": "CREDITI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 14.1,
+      "conto": "Crediti verso clienti",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.2,
+      "conto": "Crediti verso clienti per fatture da emettere",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.3,
+      "conto": "Note di credito da ricevere",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.4,
+      "conto": "Crediti tributari",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.5,
+      "conto": "Crediti verso Erario per IVA",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.6,
+      "conto": "Crediti verso INPS",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.7,
+      "conto": "Crediti verso amministratori",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.8,
+      "conto": "Crediti verso dipendenti",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 14.9,
+      "conto": "Crediti diversi",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 15,
+      "conto": "Fondo svalutazione crediti",
+      "tipo": "Attivo rettificativo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 15,
+      "conto": "DISPONIBILITÀ LIQUIDE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 15.1,
+      "conto": "Banca c/c principale",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 15.2,
+      "conto": "Banca c/c secondario",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 15.3,
+      "conto": "Cassa contanti",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 15.4,
+      "conto": "Carte aziendali",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 16,
+      "conto": "RATEI E RISCONTI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 16.1,
+      "conto": "Ratei attivi",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "codice": 16.2,
+      "conto": "Risconti attivi",
+      "tipo": "Attivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 20,
+      "conto": "PATRIMONIO NETTO",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 20.1,
+      "conto": "Capitale sociale",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 20.2,
+      "conto": "Riserva legale",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 20.3,
+      "conto": "Altre riserve",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 20.4,
+      "conto": "Utili portati a nuovo",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 20.5,
+      "conto": "Perdite portate a nuovo",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 20.6,
+      "conto": "Utile dell'esercizio",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 20.7,
+      "conto": "Perdita dell'esercizio",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 21,
+      "conto": "FONDI RISCHI E ONERI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 21.1,
+      "conto": "Fondo rischi",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 21.2,
+      "conto": "Fondo oneri futuri",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 22,
+      "conto": "TFR",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 22.1,
+      "conto": "Fondo trattamento di fine rapporto",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 23,
+      "conto": "DEBITI FINANZIARI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 23.1,
+      "conto": "Mutui e finanziamenti bancari",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 23.2,
+      "conto": "Finanziamenti soci",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 23.3,
+      "conto": "Debiti verso soci per finanziamenti",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 24,
+      "conto": "DEBITI COMMERCIALI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 24.1,
+      "conto": "Debiti verso fornitori",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 24.2,
+      "conto": "Fatture da ricevere",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 24.3,
+      "conto": "Note di credito da emettere",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 25,
+      "conto": "DEBITI TRIBUTARI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 25.1,
+      "conto": "Erario c/IVA",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 25.2,
+      "conto": "Erario c/ritenute",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 25.3,
+      "conto": "Erario c/IRES",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 25.4,
+      "conto": "Erario c/IRAP",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 25.5,
+      "conto": "Altri debiti tributari",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 26,
+      "conto": "DEBITI PREVIDENZIALI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 26.1,
+      "conto": "INPS c/contributi",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 26.2,
+      "conto": "INAIL c/contributi",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 26.3,
+      "conto": "Altri enti previdenziali",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 27,
+      "conto": "DEBITI VERSO PERSONALE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 27.1,
+      "conto": "Debiti verso dipendenti",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 27.2,
+      "conto": "Debiti verso amministratori",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 27.3,
+      "conto": "Debiti diversi",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 27.4,
+      "conto": "Anticipi da clienti",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 28,
+      "conto": "RATEI E RISCONTI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 28.1,
+      "conto": "Ratei passivi",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "codice": 28.2,
+      "conto": "Risconti passivi",
+      "tipo": "Passivo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 30,
+      "conto": "COSTI PER MATERIALI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 30.1,
+      "conto": "Acquisti materie prime e materiali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 30.2,
+      "conto": "Materiali di consumo",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 30.3,
+      "conto": "Cancelleria e materiale d'ufficio",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 30.4,
+      "conto": "Materiale informatico di consumo",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 31,
+      "conto": "COSTI PER SERVIZI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 31.1,
+      "conto": "Servizi informatici",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.2,
+      "conto": "Cloud computing",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.3,
+      "conto": "Hosting e server",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.4,
+      "conto": "Domini internet",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.5,
+      "conto": "Licenze software e SaaS",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.6,
+      "conto": "Consulenze informatiche",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.7,
+      "conto": "Consulenze amministrative e contabili",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.8,
+      "conto": "Consulenze legali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 31.9,
+      "conto": "Consulenze fiscali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32,
+      "conto": "Consulenze professionali varie",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.1,
+      "conto": "Manutenzioni hardware",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.2,
+      "conto": "Manutenzioni software",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.3,
+      "conto": "Servizi di pulizia",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.4,
+      "conto": "Utenze energia elettrica",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.5,
+      "conto": "Utenze telefoniche",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.6,
+      "conto": "Utenze internet",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.7,
+      "conto": "Spese postali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.8,
+      "conto": "Spese bancarie",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 32.9,
+      "conto": "Spese di pagamento elettronico",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33,
+      "conto": "Assicurazioni",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 33,
+      "conto": "COSTI PER SERVIZI COMMERCIALI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 33.1,
+      "conto": "Pubblicità e marketing",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33.2,
+      "conto": "Fiere ed eventi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33.3,
+      "conto": "Rappresentanza",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33.4,
+      "conto": "Servizi commerciali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33.5,
+      "conto": "Provvigioni ad agenti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33.6,
+      "conto": "Spese di trasporto e spedizione",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33.7,
+      "conto": "Spese di viaggio",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 33.8,
+      "conto": "Vitto e alloggio",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 34,
+      "conto": "COSTI PER GODIMENTO BENI DI TERZI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 34.1,
+      "conto": "Canoni di locazione",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 34.2,
+      "conto": "Noleggi hardware",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 34.3,
+      "conto": "Noleggi automezzi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 34.4,
+      "conto": "Leasing",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 35,
+      "conto": "COSTO DEL PERSONALE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 35.1,
+      "conto": "Salari e stipendi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 35.2,
+      "conto": "Contributi previdenziali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 35.3,
+      "conto": "Contributi INAIL",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 35.4,
+      "conto": "Accantonamento TFR",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 35.5,
+      "conto": "Altri costi del personale",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 35.6,
+      "conto": "Formazione del personale",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 35.7,
+      "conto": "Mensa e buoni pasto",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 36,
+      "conto": "AMMINISTRATORI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 36.1,
+      "conto": "Compensi amministratori",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 36.2,
+      "conto": "Contributi previdenziali amministratori",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 36.3,
+      "conto": "Spese rimborsate agli amministratori",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 37,
+      "conto": "COSTI GENERALI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 37.1,
+      "conto": "Quote associative",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 37.2,
+      "conto": "Spese per sicurezza sul lavoro",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 37.3,
+      "conto": "Spese per privacy e GDPR",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 37.4,
+      "conto": "Spese notarili",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 37.5,
+      "conto": "Spese camerali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 37.6,
+      "conto": "Spese amministrative varie",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 38,
+      "conto": "AMMORTAMENTI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 38.1,
+      "conto": "Ammortamento immobilizzazioni immateriali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 38.2,
+      "conto": "Ammortamento software",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 38.3,
+      "conto": "Ammortamento hardware",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 38.4,
+      "conto": "Ammortamento mobili e arredi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 38.5,
+      "conto": "Ammortamento altre immobilizzazioni materiali",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 39,
+      "conto": "ACCANTONAMENTI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 39.1,
+      "conto": "Accantonamento svalutazione crediti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 39.2,
+      "conto": "Accantonamenti per rischi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 39.3,
+      "conto": "Altri accantonamenti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 40,
+      "conto": "ONERI DIVERSI DI GESTIONE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 40.1,
+      "conto": "Imposte e tasse diverse da imposte sul reddito",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 40.2,
+      "conto": "IMU",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 40.3,
+      "conto": "Tassa rifiuti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 40.4,
+      "conto": "Diritto annuale Camera di Commercio",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 40.5,
+      "conto": "Sanzioni e penalità",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 40.6,
+      "conto": "Perdite su crediti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 40.7,
+      "conto": "Minusvalenze",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 40.8,
+      "conto": "Altri oneri diversi di gestione",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 50,
+      "conto": "RICAVI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 50.1,
+      "conto": "Ricavi da sviluppo software",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.2,
+      "conto": "Ricavi da sviluppo siti web",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.3,
+      "conto": "Ricavi da sviluppo applicazioni",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.4,
+      "conto": "Ricavi da consulenza informatica",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.5,
+      "conto": "Ricavi da assistenza e manutenzione",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.6,
+      "conto": "Ricavi da hosting",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.7,
+      "conto": "Ricavi da servizi cloud",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.8,
+      "conto": "Ricavi da licenze software",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 50.9,
+      "conto": "Ricavi da abbonamenti SaaS",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 51,
+      "conto": "Ricavi da servizi ricorrenti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 51.1,
+      "conto": "Altri ricavi e proventi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 51.2,
+      "conto": "Rimborsi spese da clienti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 51.3,
+      "conto": "Plusvalenze",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 52,
+      "conto": "Abbuoni e sconti concessi",
+      "tipo": "Conto economico rettificativo",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 60,
+      "conto": "PROVENTI FINANZIARI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 60.1,
+      "conto": "Interessi attivi bancari",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 60.2,
+      "conto": "Interessi attivi da clienti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 60.3,
+      "conto": "Altri proventi finanziari",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 61,
+      "conto": "ONERI FINANZIARI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 61.1,
+      "conto": "Interessi passivi su mutui",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 61.2,
+      "conto": "Interessi passivi bancari",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 61.3,
+      "conto": "Interessi passivi su finanziamenti soci",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 61.4,
+      "conto": "Altri oneri finanziari",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 62,
+      "conto": "RETTIFICHE FINANZIARIE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 62.1,
+      "conto": "Utili su cambi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 62.2,
+      "conto": "Perdite su cambi",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 70,
+      "conto": "IMPOSTE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 70.1,
+      "conto": "IRAP dell'esercizio",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 70.2,
+      "conto": "IRES dell'esercizio",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 70.3,
+      "conto": "Imposte relative a esercizi precedenti",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 70.4,
+      "conto": "Imposte anticipate",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "codice": 70.5,
+      "conto": "Imposte differite",
+      "tipo": "Conto economico",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 80,
+      "conto": "IVA",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 80.1,
+      "conto": "IVA a debito",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "codice": 80.2,
+      "conto": "IVA a credito",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "codice": 80.3,
+      "conto": "IVA indetraibile",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "codice": 80.4,
+      "conto": "Liquidazione IVA",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 81,
+      "conto": "PAGHE",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 81.1,
+      "conto": "Erario c/ritenute dipendenti",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "codice": 81.2,
+      "conto": "INPS c/contributi dipendenti",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "codice": 81.3,
+      "conto": "INAIL c/contributi",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 82,
+      "conto": "CLIENTI/FORNITORI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 82.1,
+      "conto": "Anticipi a fornitori",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "codice": 82.2,
+      "conto": "Anticipi da clienti",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "codice": 82.3,
+      "conto": "Partite da regolare",
+      "tipo": "Transitorio",
+      "header": false
+    },
+    {
+      "sep": true
+    },
+    {
+      "codice": 90,
+      "conto": "CHIUSURA CONTI",
+      "tipo": "",
+      "header": true
+    },
+    {
+      "codice": 90.1,
+      "conto": "Conto economico",
+      "tipo": "Chiusura",
+      "header": false
+    },
+    {
+      "codice": 90.2,
+      "conto": "Stato patrimoniale",
+      "tipo": "Chiusura",
+      "header": false
+    },
+    {
+      "codice": 90.3,
+      "conto": "Profitti e perdite",
+      "tipo": "Chiusura",
+      "header": false
+    }
+  ],
+  "movimenti": [
+    {
+      "id": "m1",
+      "data": "2026-09-17T00:00:00",
+      "descrizione": "Vendita preventivatore Gabriele",
+      "competenzaDal": null,
+      "competenzaAl": null,
+      "righe": [
+        {
+          "codice": 14.1,
+          "dare": 2500,
+          "avere": 0,
+          "riclass": "Crediti operativi a breve termine"
+        },
+        {
+          "codice": 80.1,
+          "dare": 0,
+          "avere": 0,
+          "riclass": null
+        },
+        {
+          "codice": 50.1,
+          "dare": 0,
+          "avere": 2500,
+          "riclass": null
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "data": "2026-09-20T00:00:00",
+      "descrizione": "Pagamento preventivatore Gabriele",
+      "competenzaDal": null,
+      "competenzaAl": null,
+      "righe": [
+        {
+          "codice": 15.3,
+          "dare": 2500,
+          "avere": 0,
+          "riclass": null
+        },
+        {
+          "codice": 14.1,
+          "dare": 0,
+          "avere": 2500,
+          "riclass": "Crediti operativi a breve termine"
+        }
+      ]
+    }
+  ],
+  "bilancioFormale": {
+    "attivo": [
+      {
+        "level": 0,
+        "label": "STATO PATRIMONIALE",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Attivo",
+        "total": false,
+        "values": [
+          "2026-12-31 00:00:00",
+          "2027-12-31 00:00:00",
+          "2028-12-31 00:00:00"
+        ]
+      },
+      {
+        "level": 0,
+        "label": "A) Crediti verso soci per versamenti ancora dovuti, con separata indicazione della parte già richiamata",
+        "total": false,
+        "values": [
+          null,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "B) Immobilizzazioni, con separata indicazione di quelle concesse in locazione finanziaria:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "I - Immobilizzazioni immateriali",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "1) costi di impianto e di ampliamento",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "2) costi di sviluppo",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3) diritti di brevetto industriale e diritti di utilizzazione delle opere dell'ingegno",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "4) concessioni, licenze, marchi e diritti simili",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5) avviamento",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "6) immobilizzazioni in corso e acconti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "7) altre",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "Totale I - Immobilizzazioni immateriali",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "II - Immobilizzazioni materiali:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "1) terreni e fabbricati",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "2) impianti e macchinario",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3) attrezzature industriali e commerciali",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "4) altri beni",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5) immobilizzazioni in corso e acconti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "Totale II - Immobilizzazioni materiali:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "III - Immobilizzazioni finanziarie, con separata indicazione, per ciascuna voce dei crediti, degli importi esigibili entro l'esercizio successivo:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "1) partecipazioni in:",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "a) imprese controllate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "b) imprese collegate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "c) imprese controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "d) imprese sottoposte al controllo delle controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "d-bis) altre imprese",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "2) crediti:",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "a) verso imprese controllate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "b) verso imprese collegate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "c) verso controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "d) verso imprese sottoposte a controllo delle controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 3,
+        "label": "d-bis) verso altri",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3) altri titoli",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "4) strumenti finanziari derivati attivi",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "Totale III - Immobilizzazioni finanziarie, con separata indicazione, per ciascuna voce dei crediti, degli importi esigibili entro l'esercizio successivo:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale  B) Immobilizzazioni, con separata indicazione di quelle concesse in locazione finanziaria:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "C) Attivo circolante:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "I - Rimanenze:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "1) materie prime, sussidiarie e di consumo",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "2) prodotti in corso di lavorazione e semilavorati",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3) lavori in corso su ordinazione",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "4) prodotti finiti e merci",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5) acconti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "Totale I - Rimanenze:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "II - Crediti, con separata indicazione, per ciascuna voce, degli importi esigibili oltre l'esercizio successivo:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "1) verso clienti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "2) verso imprese controllate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3) verso imprese collegate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "4) verso controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5) verso imprese sottoposte al controllo delle controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5-bis) crediti tributari",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5-ter) imposte anticipate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5-quater) verso altri",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "Totale II - Crediti, con separata indicazione, per ciascuna voce, degli importi esigibili oltre l'esercizio successivo:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "III - Attività finanziarie che non costituiscono immobilizzazioni:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "1) partecipazioni in imprese controllate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "2) partecipazioni in imprese collegate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3) partecipazioni in imprese controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3-bis) partecipazioni in imprese sottoposte al controllo delle controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "4) altre partecipazioni",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "5) strumenti finanziari derivati attivi",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "6) altri titoli",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "Totale III - Attività finanziarie che non costituiscono immobilizzazioni:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "IV - Disponibilità liquide:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "1) depositi bancari e postali",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "2) assegni",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "3) danaro e valori in cassa",
+        "total": false,
+        "values": [
+          2500,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "Totale IV - Disponibilità liquide:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale  C) Attivo circolante:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "D) Ratei e risconti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale Attivo",
+        "total": true,
+        "values": [
+          null,
+          0,
+          0
+        ]
+      }
+    ],
+    "passivo": [
+      {
+        "level": 0,
+        "label": "Passivo",
+        "total": false,
+        "values": [
+          "2026-12-31 00:00:00",
+          "2027-12-31 00:00:00",
+          "2028-12-31 00:00:00"
+        ]
+      },
+      {
+        "level": 0,
+        "label": "A) Patrimonio netto:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "I - Capitale.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "II - Riserva da soprapprezzo delle azioni.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "III - Riserve di rivalutazione.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "IV - Riserva legale.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "V - Riserve statutarie.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "VI - Altre riserve, distintamente indicate.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "VII - Riserva per operazioni di copertura dei flussi finanziari attesi.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "VIII - Utile (perdite) portato a nuovo.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "IX - Utile (perdita) dell'esercizio.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "X - Riserva negativa per azioni proprie in portafoglio.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale A) Patrimonio netto:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "B) Fondi per rischi e oneri:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "1) per trattamento di quiescenza e obblighi simili",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "2) per imposte, anche differite",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "3) strumenti finanziari derivati passivi",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "4) altri.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale B) Fondi per rischi e oneri:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "C) Trattamento di fine rapporto di lavoro subordinato.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "D) Debiti, con separata indicazione, per ciascuna voce, degli importi esigibili oltre l'esercizio successivo:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "1) obbligazioni",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "2) obbligazioni convertibili",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "3) debiti verso soci per finanziamenti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "4) debiti verso banche",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "5) debiti verso altri finanziatori",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "6) acconti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "7) debiti verso fornitori",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "8) debiti rappresentati da titoli di credito",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "9) debiti verso imprese controllate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "10) debiti verso imprese collegate",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "11) debiti verso controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "11-bis) debiti verso imprese sottoposte al controllo delle controllanti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "12) debiti tributari",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "13) debiti verso istituti di previdenza e di sicurezza sociale",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "14) altri debiti.",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale D) Debiti, con separata indicazione, per ciascuna voce, degli importi esigibili oltre l'esercizio successivo:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "E) Ratei e risconti",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale Passivo",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "ce": [
+      {
+        "level": 0,
+        "label": "A) Valore della produzione:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "1) ricavi delle vendite e delle prestazioni;",
+        "total": false,
+        "values": [
+          2500,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "2) variazioni delle rimanenze di prodotti in corso di lavorazione, semilavorati e finiti;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "3) variazioni dei lavori in corso su ordinazione;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "4) incrementi di immobilizzazioni per lavori interni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "5) altri ricavi e proventi, con separata indicazione dei contributi in conto esercizio",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale  A) Valore della produzione:",
+        "total": true,
+        "values": [
+          2500,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "B) Costi della produzione:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "6) per materie prime, sussidiarie, di consumo e di merci;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "7) per servizi;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "8) per godimento di beni di terzi;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "9) per il personale:",
+        "total": false,
+        "values": [
+          0,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "a) salari e stipendi;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "b) oneri sociali;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "c) trattamento di fine rapporto;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "d) trattamento di quiescenza e simili;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "e) altri costi;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "10) ammortamenti e svalutazioni:",
+        "total": false,
+        "values": [
+          0,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "a) ammortamento delle immobilizzazioni immateriali;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "b) ammortamento delle immobilizzazioni materiali;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "c) altre svalutazioni delle immobilizzazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "d) svalutazioni dei crediti compresi nell'attivo circolante e delle disponibilità liquide;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "11) variazioni delle rimanenze di materie prime, sussidiarie, di consumo e merci;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "12) accantonamenti per rischi;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "13) altri accantonamenti;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "14) oneri diversi di gestione",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale  B) Costi della produzione:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Differenza tra valore e costi della produzione (A - B)",
+        "total": false,
+        "values": [
+          2500,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "C) Proventi e oneri finanziari:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "15) proventi da partecipazioni, con separata indicazione di quelli relativi ad imprese controllate e collegate e di quelli relativi a controllanti e a imprese sottoposte al controllo di queste ultime;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "16) altri proventi finanziari:",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "computed": true
+      },
+      {
+        "level": 2,
+        "label": "a) da crediti iscritti nelle immobilizzazioni, con separata indicazione di quelli da imprese controllate e collegate e di quelli da controllanti e da imprese sottoposte al controllo di queste ultime;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "b) da titoli iscritti nelle immobilizzazioni che non costituiscono partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "c) da titoli iscritti nell'attivo circolante che non costituiscono partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "d) proventi diversi dai precedenti, con separata indicazione di quelli da imprese controllate e collegate e di quelli da controllanti e da imprese sottoposte al controllo di queste ultime;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "17) interessi e altri oneri finanziari, con separata indicazione di quelli verso imprese controllate e collegate e verso controllanti;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "17bis) utili e perdite su cambi",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale  C) Proventi e oneri finanziari:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "D) Rettifiche di valore di attività e passività finanziarie:",
+        "total": false,
+        "values": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 1,
+        "label": "18) rivalutazioni:",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "computed": true
+      },
+      {
+        "level": 2,
+        "label": "a) di partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "b) di immobilizzazioni finanziarie che non costituiscono partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "c) di titoli iscritti all'attivo circolante che non costituiscono partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "d) di strumenti finanziari derivati;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "19) svalutazioni:",
+        "total": false,
+        "values": [
+          0,
+          null,
+          null
+        ]
+      },
+      {
+        "level": 2,
+        "label": "a) di partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "b) di immobilizzazioni finanziarie che non costituiscono partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "c) di titoli iscritti nell'attivo circolante che non costituiscono partecipazioni;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 2,
+        "label": "d) di strumenti finanziari derivati",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "Totale  D) Rettifiche di valore di attività e passività finanziarie:",
+        "total": true,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 0,
+        "label": "E) Risultato prima delle imposte (A - B + - C + - D);",
+        "total": false,
+        "values": [
+          2500,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "20) imposte sul reddito dell'esercizio, correnti, differite e anticipate;",
+        "total": false,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "level": 1,
+        "label": "21) utile (perdite) dell'esercizio",
+        "total": false,
+        "values": [
+          2500,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "modelli": [
+    {
+      "id": "tpl-vendita-immediata",
+      "nome": "Vendita con incasso immediato",
+      "descrizione": "Vendita a [cliente] – [servizio]",
+      "pluriennale": false,
+      "righe": [
+        {
+          "codice": "15.3",
+          "lato": "dare",
+          "esempio": 1000,
+          "riclass": ""
+        },
+        {
+          "codice": "50.1",
+          "lato": "avere",
+          "esempio": 1000,
+          "riclass": ""
+        }
+      ]
+    },
+    {
+      "id": "tpl-vendita-credito",
+      "nome": "Vendita a credito (fattura da incassare)",
+      "descrizione": "Fattura a [cliente] – [servizio]",
+      "pluriennale": false,
+      "righe": [
+        {
+          "codice": "14.1",
+          "lato": "dare",
+          "esempio": 1500,
+          "riclass": "Crediti operativi a breve termine"
+        },
+        {
+          "codice": "50.1",
+          "lato": "avere",
+          "esempio": 1500,
+          "riclass": ""
+        }
+      ]
+    },
+    {
+      "id": "tpl-incasso-credito",
+      "nome": "Incasso fattura cliente",
+      "descrizione": "Incasso fattura n. [___] da [cliente]",
+      "pluriennale": false,
+      "righe": [
+        {
+          "codice": "15.3",
+          "lato": "dare",
+          "esempio": 1500,
+          "riclass": ""
+        },
+        {
+          "codice": "14.1",
+          "lato": "avere",
+          "esempio": 1500,
+          "riclass": "Crediti operativi a breve termine"
+        }
+      ]
+    },
+    {
+      "id": "tpl-costo-immediato",
+      "nome": "Costo pagato subito",
+      "descrizione": "Acquisto/servizio – [fornitore]",
+      "pluriennale": false,
+      "righe": [
+        {
+          "codice": "31.1",
+          "lato": "dare",
+          "esempio": 100,
+          "riclass": ""
+        },
+        {
+          "codice": "15.3",
+          "lato": "avere",
+          "esempio": 100,
+          "riclass": ""
+        }
+      ]
+    },
+    {
+      "id": "tpl-fattura-fornitore",
+      "nome": "Fattura fornitore da pagare",
+      "descrizione": "Fattura da [fornitore]",
+      "pluriennale": false,
+      "righe": [
+        {
+          "codice": "31.1",
+          "lato": "dare",
+          "esempio": 200,
+          "riclass": ""
+        },
+        {
+          "codice": "24.1",
+          "lato": "avere",
+          "esempio": 200,
+          "riclass": ""
+        }
+      ]
+    },
+    {
+      "id": "tpl-pagamento-fornitore",
+      "nome": "Pagamento fattura fornitore",
+      "descrizione": "Pagamento fattura a [fornitore]",
+      "pluriennale": false,
+      "righe": [
+        {
+          "codice": "24.1",
+          "lato": "dare",
+          "esempio": 200,
+          "riclass": ""
+        },
+        {
+          "codice": "15.3",
+          "lato": "avere",
+          "esempio": 200,
+          "riclass": ""
+        }
+      ]
+    },
+    {
+      "id": "tpl-abbonamento",
+      "nome": "Abbonamento / canone pluriennale",
+      "descrizione": "Abbonamento [servizio] – periodo [dal/al]",
+      "pluriennale": true,
+      "righe": [
+        {
+          "codice": "31.5",
+          "lato": "dare",
+          "esempio": 120,
+          "riclass": ""
+        },
+        {
+          "codice": "15.3",
+          "lato": "avere",
+          "esempio": 120,
+          "riclass": ""
+        }
+      ]
+    },
+    {
+      "id": "tpl-versamento-socio",
+      "nome": "Versamento socio (finanziamento)",
+      "descrizione": "Versamento soci [nome]",
+      "pluriennale": false,
+      "righe": [
+        {
+          "codice": "15.1",
+          "lato": "dare",
+          "esempio": 5000,
+          "riclass": ""
+        },
+        {
+          "codice": "23.2",
+          "lato": "avere",
+          "esempio": 5000,
+          "riclass": ""
+        }
+      ]
+    }
+  ]
+}
