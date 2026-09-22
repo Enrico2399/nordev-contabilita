@@ -3,7 +3,7 @@
     "progetto": "Nordev — Contabilità",
     "fonteIniziale": "Nordev_Contabilità_bozza_v02.xlsx",
     "creato": "2026-09-20",
-    "aggiornato": "2026-09-21"
+    "aggiornato": "2026-09-22"
   },
   "piano": [
     {
@@ -13,43 +13,43 @@
       "header": true
     },
     {
-      "codice": 10.1,
+      "codice": "10.01",
       "conto": "Costi di impianto e ampliamento",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.2,
+      "codice": "10.02",
       "conto": "Costi di sviluppo",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.3,
+      "codice": "10.03",
       "conto": "Software di proprietà",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.4,
+      "codice": "10.04",
       "conto": "Diritti di brevetto e opere dell'ingegno",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.5,
+      "codice": "10.05",
       "conto": "Concessioni, licenze e marchi",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.6,
+      "codice": "10.06",
       "conto": "Altre immobilizzazioni immateriali",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.9,
+      "codice": "10.07",
       "conto": "Fondo ammortamento immobilizzazioni immateriali",
       "tipo": "Attivo rettificativo",
       "header": false
@@ -64,37 +64,37 @@
       "header": true
     },
     {
-      "codice": 11.1,
+      "codice": "11.01",
       "conto": "Macchine elettroniche e hardware",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.2,
+      "codice": "11.02",
       "conto": "Attrezzature",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.3,
+      "codice": "11.03",
       "conto": "Mobili e arredi",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.4,
+      "codice": "11.04",
       "conto": "Impianti",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.5,
+      "codice": "11.05",
       "conto": "Altri beni materiali",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 12,
+      "codice": "11.06",
       "conto": "Fondo ammortamento immobilizzazioni materiali",
       "tipo": "Attivo rettificativo",
       "header": false
@@ -109,16 +109,18 @@
       "header": true
     },
     {
-      "codice": 12.1,
+      "codice": "12.01",
       "conto": "Partecipazioni",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 12.2,
+      "codice": "12.02",
       "conto": "Crediti finanziari immobilizzati",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -130,13 +132,13 @@
       "header": true
     },
     {
-      "codice": 13.1,
+      "codice": "13.01",
       "conto": "Rimanenze di prodotti e lavori in corso",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 13.2,
+      "codice": "13.02",
       "conto": "Rimanenze di materiali di consumo",
       "tipo": "Attivo",
       "header": false
@@ -151,61 +153,79 @@
       "header": true
     },
     {
-      "codice": 14.1,
+      "codice": "14.01",
       "conto": "Crediti verso clienti",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.2,
+      "codice": "14.02",
       "conto": "Crediti verso clienti per fatture da emettere",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.3,
+      "codice": "14.03",
       "conto": "Note di credito da ricevere",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.4,
+      "codice": "14.04",
       "conto": "Crediti tributari",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.5,
+      "codice": "14.05",
       "conto": "Crediti verso Erario per IVA",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.6,
+      "codice": "14.06",
       "conto": "Crediti verso INPS",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.7,
+      "codice": "14.07",
       "conto": "Crediti verso amministratori",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.8,
+      "codice": "14.08",
       "conto": "Crediti verso dipendenti",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.9,
+      "codice": "14.09",
       "conto": "Crediti diversi",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 15,
+      "codice": "14.10",
       "conto": "Fondo svalutazione crediti",
       "tipo": "Attivo rettificativo",
       "header": false
@@ -220,25 +240,25 @@
       "header": true
     },
     {
-      "codice": 15.1,
+      "codice": "15.01",
       "conto": "Banca c/c principale",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 15.2,
+      "codice": "15.02",
       "conto": "Banca c/c secondario",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 15.3,
+      "codice": "15.03",
       "conto": "Cassa contanti",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 15.4,
+      "codice": "15.04",
       "conto": "Carte aziendali",
       "tipo": "Attivo",
       "header": false
@@ -253,13 +273,13 @@
       "header": true
     },
     {
-      "codice": 16.1,
+      "codice": "16.01",
       "conto": "Ratei attivi",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 16.2,
+      "codice": "16.02",
       "conto": "Risconti attivi",
       "tipo": "Attivo",
       "header": false
@@ -274,43 +294,43 @@
       "header": true
     },
     {
-      "codice": 20.1,
+      "codice": "20.01",
       "conto": "Capitale sociale",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.2,
+      "codice": "20.02",
       "conto": "Riserva legale",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.3,
+      "codice": "20.03",
       "conto": "Altre riserve",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.4,
+      "codice": "20.04",
       "conto": "Utili portati a nuovo",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.5,
+      "codice": "20.05",
       "conto": "Perdite portate a nuovo",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.6,
+      "codice": "20.06",
       "conto": "Utile dell'esercizio",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.7,
+      "codice": "20.07",
       "conto": "Perdita dell'esercizio",
       "tipo": "Passivo",
       "header": false
@@ -325,13 +345,13 @@
       "header": true
     },
     {
-      "codice": 21.1,
+      "codice": "21.01",
       "conto": "Fondo rischi",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 21.2,
+      "codice": "21.02",
       "conto": "Fondo oneri futuri",
       "tipo": "Passivo",
       "header": false
@@ -346,7 +366,7 @@
       "header": true
     },
     {
-      "codice": 22.1,
+      "codice": "22.01",
       "conto": "Fondo trattamento di fine rapporto",
       "tipo": "Passivo",
       "header": false
@@ -361,22 +381,28 @@
       "header": true
     },
     {
-      "codice": 23.1,
+      "codice": "23.01",
       "conto": "Mutui e finanziamenti bancari",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
-      "codice": 23.2,
+      "codice": "23.02",
       "conto": "Finanziamenti soci",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
-      "codice": 23.3,
+      "codice": "23.03",
       "conto": "Debiti verso soci per finanziamenti",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -388,22 +414,28 @@
       "header": true
     },
     {
-      "codice": 24.1,
+      "codice": "24.01",
       "conto": "Debiti verso fornitori",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 24.2,
+      "codice": "24.02",
       "conto": "Fatture da ricevere",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 24.3,
+      "codice": "24.03",
       "conto": "Note di credito da emettere",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -415,34 +447,44 @@
       "header": true
     },
     {
-      "codice": 25.1,
+      "codice": "25.01",
       "conto": "Erario c/IVA",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.2,
+      "codice": "25.02",
       "conto": "Erario c/ritenute",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.3,
+      "codice": "25.03",
       "conto": "Erario c/IRES",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.4,
+      "codice": "25.04",
       "conto": "Erario c/IRAP",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.5,
+      "codice": "25.05",
       "conto": "Altri debiti tributari",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -454,22 +496,28 @@
       "header": true
     },
     {
-      "codice": 26.1,
+      "codice": "26.01",
       "conto": "INPS c/contributi",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 26.2,
+      "codice": "26.02",
       "conto": "INAIL c/contributi",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 26.3,
+      "codice": "26.03",
       "conto": "Altri enti previdenziali",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -481,28 +529,36 @@
       "header": true
     },
     {
-      "codice": 27.1,
+      "codice": "27.01",
       "conto": "Debiti verso dipendenti",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 27.2,
+      "codice": "27.02",
       "conto": "Debiti verso amministratori",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 27.3,
+      "codice": "27.03",
       "conto": "Debiti diversi",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 27.4,
+      "codice": "27.04",
       "conto": "Anticipi da clienti",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -514,13 +570,13 @@
       "header": true
     },
     {
-      "codice": 28.1,
+      "codice": "28.01",
       "conto": "Ratei passivi",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 28.2,
+      "codice": "28.02",
       "conto": "Risconti passivi",
       "tipo": "Passivo",
       "header": false
@@ -535,25 +591,25 @@
       "header": true
     },
     {
-      "codice": 30.1,
+      "codice": "30.01",
       "conto": "Acquisti materie prime e materiali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 30.2,
+      "codice": "30.02",
       "conto": "Materiali di consumo",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 30.3,
+      "codice": "30.03",
       "conto": "Cancelleria e materiale d'ufficio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 30.4,
+      "codice": "30.04",
       "conto": "Materiale informatico di consumo",
       "tipo": "Conto economico",
       "header": false
@@ -568,121 +624,121 @@
       "header": true
     },
     {
-      "codice": 31.1,
+      "codice": "31.01",
       "conto": "Servizi informatici",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.2,
+      "codice": "31.02",
       "conto": "Cloud computing",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.3,
+      "codice": "31.03",
       "conto": "Hosting e server",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.4,
+      "codice": "31.04",
       "conto": "Domini internet",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.5,
+      "codice": "31.05",
       "conto": "Licenze software e SaaS",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.6,
+      "codice": "31.06",
       "conto": "Consulenze informatiche",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.7,
+      "codice": "31.07",
       "conto": "Consulenze amministrative e contabili",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.8,
+      "codice": "31.08",
       "conto": "Consulenze legali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.9,
+      "codice": "31.09",
       "conto": "Consulenze fiscali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32,
+      "codice": "31.10",
       "conto": "Consulenze professionali varie",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.1,
+      "codice": "31.11",
       "conto": "Manutenzioni hardware",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.2,
+      "codice": "31.12",
       "conto": "Manutenzioni software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.3,
+      "codice": "31.13",
       "conto": "Servizi di pulizia",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.4,
+      "codice": "31.14",
       "conto": "Utenze energia elettrica",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.5,
+      "codice": "31.15",
       "conto": "Utenze telefoniche",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.6,
+      "codice": "31.16",
       "conto": "Utenze internet",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.7,
+      "codice": "31.17",
       "conto": "Spese postali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.8,
+      "codice": "31.18",
       "conto": "Spese bancarie",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.9,
+      "codice": "31.19",
       "conto": "Spese di pagamento elettronico",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33,
+      "codice": "31.20",
       "conto": "Assicurazioni",
       "tipo": "Conto economico",
       "header": false
@@ -697,49 +753,49 @@
       "header": true
     },
     {
-      "codice": 33.1,
+      "codice": "33.01",
       "conto": "Pubblicità e marketing",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.2,
+      "codice": "33.02",
       "conto": "Fiere ed eventi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.3,
+      "codice": "33.03",
       "conto": "Rappresentanza",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.4,
+      "codice": "33.04",
       "conto": "Servizi commerciali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.5,
+      "codice": "33.05",
       "conto": "Provvigioni ad agenti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.6,
+      "codice": "33.06",
       "conto": "Spese di trasporto e spedizione",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.7,
+      "codice": "33.07",
       "conto": "Spese di viaggio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.8,
+      "codice": "33.08",
       "conto": "Vitto e alloggio",
       "tipo": "Conto economico",
       "header": false
@@ -754,25 +810,25 @@
       "header": true
     },
     {
-      "codice": 34.1,
+      "codice": "34.01",
       "conto": "Canoni di locazione",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 34.2,
+      "codice": "34.02",
       "conto": "Noleggi hardware",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 34.3,
+      "codice": "34.03",
       "conto": "Noleggi automezzi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 34.4,
+      "codice": "34.04",
       "conto": "Leasing",
       "tipo": "Conto economico",
       "header": false
@@ -787,43 +843,43 @@
       "header": true
     },
     {
-      "codice": 35.1,
+      "codice": "35.01",
       "conto": "Salari e stipendi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.2,
+      "codice": "35.02",
       "conto": "Contributi previdenziali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.3,
+      "codice": "35.03",
       "conto": "Contributi INAIL",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.4,
+      "codice": "35.04",
       "conto": "Accantonamento TFR",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.5,
+      "codice": "35.05",
       "conto": "Altri costi del personale",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.6,
+      "codice": "35.06",
       "conto": "Formazione del personale",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.7,
+      "codice": "35.07",
       "conto": "Mensa e buoni pasto",
       "tipo": "Conto economico",
       "header": false
@@ -838,19 +894,19 @@
       "header": true
     },
     {
-      "codice": 36.1,
+      "codice": "36.01",
       "conto": "Compensi amministratori",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 36.2,
+      "codice": "36.02",
       "conto": "Contributi previdenziali amministratori",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 36.3,
+      "codice": "36.03",
       "conto": "Spese rimborsate agli amministratori",
       "tipo": "Conto economico",
       "header": false
@@ -865,37 +921,37 @@
       "header": true
     },
     {
-      "codice": 37.1,
+      "codice": "37.01",
       "conto": "Quote associative",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.2,
+      "codice": "37.02",
       "conto": "Spese per sicurezza sul lavoro",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.3,
+      "codice": "37.03",
       "conto": "Spese per privacy e GDPR",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.4,
+      "codice": "37.04",
       "conto": "Spese notarili",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.5,
+      "codice": "37.05",
       "conto": "Spese camerali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.6,
+      "codice": "37.06",
       "conto": "Spese amministrative varie",
       "tipo": "Conto economico",
       "header": false
@@ -910,31 +966,31 @@
       "header": true
     },
     {
-      "codice": 38.1,
+      "codice": "38.01",
       "conto": "Ammortamento immobilizzazioni immateriali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.2,
+      "codice": "38.02",
       "conto": "Ammortamento software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.3,
+      "codice": "38.03",
       "conto": "Ammortamento hardware",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.4,
+      "codice": "38.04",
       "conto": "Ammortamento mobili e arredi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.5,
+      "codice": "38.05",
       "conto": "Ammortamento altre immobilizzazioni materiali",
       "tipo": "Conto economico",
       "header": false
@@ -949,19 +1005,19 @@
       "header": true
     },
     {
-      "codice": 39.1,
+      "codice": "39.01",
       "conto": "Accantonamento svalutazione crediti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 39.2,
+      "codice": "39.02",
       "conto": "Accantonamenti per rischi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 39.3,
+      "codice": "39.03",
       "conto": "Altri accantonamenti",
       "tipo": "Conto economico",
       "header": false
@@ -976,49 +1032,49 @@
       "header": true
     },
     {
-      "codice": 40.1,
+      "codice": "40.01",
       "conto": "Imposte e tasse diverse da imposte sul reddito",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.2,
+      "codice": "40.02",
       "conto": "IMU",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.3,
+      "codice": "40.03",
       "conto": "Tassa rifiuti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.4,
+      "codice": "40.04",
       "conto": "Diritto annuale Camera di Commercio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.5,
+      "codice": "40.05",
       "conto": "Sanzioni e penalità",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.6,
+      "codice": "40.06",
       "conto": "Perdite su crediti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.7,
+      "codice": "40.07",
       "conto": "Minusvalenze",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.8,
+      "codice": "40.08",
       "conto": "Altri oneri diversi di gestione",
       "tipo": "Conto economico",
       "header": false
@@ -1033,85 +1089,85 @@
       "header": true
     },
     {
-      "codice": 50.1,
+      "codice": "50.01",
       "conto": "Ricavi da sviluppo software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.2,
+      "codice": "50.02",
       "conto": "Ricavi da sviluppo siti web",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.3,
+      "codice": "50.03",
       "conto": "Ricavi da sviluppo applicazioni",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.4,
+      "codice": "50.04",
       "conto": "Ricavi da consulenza informatica",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.5,
+      "codice": "50.05",
       "conto": "Ricavi da assistenza e manutenzione",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.6,
+      "codice": "50.06",
       "conto": "Ricavi da hosting",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.7,
+      "codice": "50.07",
       "conto": "Ricavi da servizi cloud",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.8,
+      "codice": "50.08",
       "conto": "Ricavi da licenze software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.9,
+      "codice": "50.09",
       "conto": "Ricavi da abbonamenti SaaS",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51,
+      "codice": "50.10",
       "conto": "Ricavi da servizi ricorrenti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51.1,
+      "codice": "50.11",
       "conto": "Altri ricavi e proventi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51.2,
+      "codice": "50.12",
       "conto": "Rimborsi spese da clienti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51.3,
+      "codice": "50.13",
       "conto": "Plusvalenze",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 52,
+      "codice": "50.14",
       "conto": "Abbuoni e sconti concessi",
       "tipo": "Conto economico rettificativo",
       "header": false
@@ -1126,19 +1182,19 @@
       "header": true
     },
     {
-      "codice": 60.1,
+      "codice": "60.01",
       "conto": "Interessi attivi bancari",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 60.2,
+      "codice": "60.02",
       "conto": "Interessi attivi da clienti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 60.3,
+      "codice": "60.03",
       "conto": "Altri proventi finanziari",
       "tipo": "Conto economico",
       "header": false
@@ -1153,25 +1209,25 @@
       "header": true
     },
     {
-      "codice": 61.1,
+      "codice": "61.01",
       "conto": "Interessi passivi su mutui",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 61.2,
+      "codice": "61.02",
       "conto": "Interessi passivi bancari",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 61.3,
+      "codice": "61.03",
       "conto": "Interessi passivi su finanziamenti soci",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 61.4,
+      "codice": "61.04",
       "conto": "Altri oneri finanziari",
       "tipo": "Conto economico",
       "header": false
@@ -1186,13 +1242,13 @@
       "header": true
     },
     {
-      "codice": 62.1,
+      "codice": "62.01",
       "conto": "Utili su cambi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 62.2,
+      "codice": "62.02",
       "conto": "Perdite su cambi",
       "tipo": "Conto economico",
       "header": false
@@ -1207,31 +1263,31 @@
       "header": true
     },
     {
-      "codice": 70.1,
+      "codice": "70.01",
       "conto": "IRAP dell'esercizio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.2,
+      "codice": "70.02",
       "conto": "IRES dell'esercizio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.3,
+      "codice": "70.03",
       "conto": "Imposte relative a esercizi precedenti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.4,
+      "codice": "70.04",
       "conto": "Imposte anticipate",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.5,
+      "codice": "70.05",
       "conto": "Imposte differite",
       "tipo": "Conto economico",
       "header": false
@@ -1246,25 +1302,25 @@
       "header": true
     },
     {
-      "codice": 80.1,
+      "codice": "80.01",
       "conto": "IVA a debito",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 80.2,
+      "codice": "80.02",
       "conto": "IVA a credito",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 80.3,
+      "codice": "80.03",
       "conto": "IVA indetraibile",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 80.4,
+      "codice": "80.04",
       "conto": "Liquidazione IVA",
       "tipo": "Transitorio",
       "header": false
@@ -1279,19 +1335,19 @@
       "header": true
     },
     {
-      "codice": 81.1,
+      "codice": "81.01",
       "conto": "Erario c/ritenute dipendenti",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 81.2,
+      "codice": "81.02",
       "conto": "INPS c/contributi dipendenti",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 81.3,
+      "codice": "81.03",
       "conto": "INAIL c/contributi",
       "tipo": "Transitorio",
       "header": false
@@ -1306,19 +1362,19 @@
       "header": true
     },
     {
-      "codice": 82.1,
+      "codice": "82.01",
       "conto": "Anticipi a fornitori",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 82.2,
+      "codice": "82.02",
       "conto": "Anticipi da clienti",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 82.3,
+      "codice": "82.03",
       "conto": "Partite da regolare",
       "tipo": "Transitorio",
       "header": false
@@ -1333,19 +1389,19 @@
       "header": true
     },
     {
-      "codice": 90.1,
+      "codice": "90.01",
       "conto": "Conto economico",
       "tipo": "Chiusura",
       "header": false
     },
     {
-      "codice": 90.2,
+      "codice": "90.02",
       "conto": "Stato patrimoniale",
       "tipo": "Chiusura",
       "header": false
     },
     {
-      "codice": 90.3,
+      "codice": "90.03",
       "conto": "Profitti e perdite",
       "tipo": "Chiusura",
       "header": false
@@ -1360,19 +1416,19 @@
       "competenzaAl": null,
       "righe": [
         {
-          "codice": 14.1,
+          "codice": "14.01",
           "dare": 2500,
           "avere": 0,
           "riclass": "Crediti operativi a breve termine"
         },
         {
-          "codice": 80.1,
+          "codice": "80.01",
           "dare": 0,
           "avere": 0,
           "riclass": null
         },
         {
-          "codice": 50.1,
+          "codice": "50.01",
           "dare": 0,
           "avere": 2500,
           "riclass": null
@@ -1387,13 +1443,13 @@
       "competenzaAl": null,
       "righe": [
         {
-          "codice": 15.3,
+          "codice": "15.03",
           "dare": 2500,
           "avere": 0,
           "riclass": null
         },
         {
-          "codice": 14.1,
+          "codice": "14.01",
           "dare": 0,
           "avere": 2500,
           "riclass": "Crediti operativi a breve termine"
@@ -3059,13 +3115,13 @@
       "pluriennale": false,
       "righe": [
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "dare",
           "esempio": 1000,
           "riclass": ""
         },
         {
-          "codice": "50.1",
+          "codice": "50.01",
           "lato": "avere",
           "esempio": 1000,
           "riclass": ""
@@ -3079,13 +3135,13 @@
       "pluriennale": false,
       "righe": [
         {
-          "codice": "14.1",
+          "codice": "14.01",
           "lato": "dare",
           "esempio": 1500,
           "riclass": "Crediti operativi a breve termine"
         },
         {
-          "codice": "50.1",
+          "codice": "50.01",
           "lato": "avere",
           "esempio": 1500,
           "riclass": ""
@@ -3099,13 +3155,13 @@
       "pluriennale": false,
       "righe": [
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "dare",
           "esempio": 1500,
           "riclass": ""
         },
         {
-          "codice": "14.1",
+          "codice": "14.01",
           "lato": "avere",
           "esempio": 1500,
           "riclass": "Crediti operativi a breve termine"
@@ -3119,13 +3175,13 @@
       "pluriennale": false,
       "righe": [
         {
-          "codice": "31.1",
+          "codice": "31.01",
           "lato": "dare",
           "esempio": 100,
           "riclass": ""
         },
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "avere",
           "esempio": 100,
           "riclass": ""
@@ -3139,13 +3195,13 @@
       "pluriennale": false,
       "righe": [
         {
-          "codice": "31.1",
+          "codice": "31.01",
           "lato": "dare",
           "esempio": 200,
           "riclass": ""
         },
         {
-          "codice": "24.1",
+          "codice": "24.01",
           "lato": "avere",
           "esempio": 200,
           "riclass": ""
@@ -3159,13 +3215,13 @@
       "pluriennale": false,
       "righe": [
         {
-          "codice": "24.1",
+          "codice": "24.01",
           "lato": "dare",
           "esempio": 200,
           "riclass": ""
         },
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "avere",
           "esempio": 200,
           "riclass": ""
@@ -3179,13 +3235,13 @@
       "pluriennale": true,
       "righe": [
         {
-          "codice": "31.5",
+          "codice": "31.05",
           "lato": "dare",
           "esempio": 120,
           "riclass": ""
         },
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "avere",
           "esempio": 120,
           "riclass": ""
@@ -3199,13 +3255,13 @@
       "pluriennale": false,
       "righe": [
         {
-          "codice": "15.1",
+          "codice": "15.01",
           "lato": "dare",
           "esempio": 5000,
           "riclass": ""
         },
         {
-          "codice": "23.2",
+          "codice": "23.02",
           "lato": "avere",
           "esempio": 5000,
           "riclass": ""

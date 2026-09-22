@@ -151,10 +151,17 @@
   .switch.on::after{left:18px;}
 
   .movimento{border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:10px;background:var(--surface-2);}
+  .movimento.archiviato{opacity:0.72;border-style:dashed;}
   .movimento .mtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
   .movimento .mdesc{font-weight:700;font-size:14.5px;}
   .movimento .mdate{font-size:12px;color:var(--text-faint);white-space:nowrap;}
   .movimento .mamt{font-weight:700;color:var(--success);font-size:15px;margin-top:2px;}
+  .movimento .m-actions{display:flex;gap:6px;margin-top:10px;}
+  .movimento .m-actions button{flex:1;min-height:38px;}
+  .archiviato-badge{
+    display:inline-block;font-size:10.5px;font-weight:700;color:var(--text-faint);
+    background:var(--neutral-soft);border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:middle;
+  }
   .righe{margin-top:8px;border-top:1px dashed var(--border);padding-top:8px;display:grid;gap:5px;}
   .riga{display:flex;justify-content:space-between;font-size:13px;gap:8px;}
   .riga .rc{color:var(--text-dim);}
@@ -198,6 +205,20 @@
   .pill.transitorio, .pill.chiusura{background:var(--neutral-soft);color:var(--text-dim);}
   .saldo-val{font-weight:700;font-variant-numeric:tabular-nums;min-width:64px;text-align:right;}
   .saldo-val.zero{color:var(--text-faint);font-weight:500;}
+  .conto-edit-btn{
+    flex:0 0 auto;border:none;background:var(--neutral-soft);color:var(--text-dim);
+    width:40px;height:40px;border-radius:9px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  }
+  .scad-badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:6px;white-space:nowrap;background:var(--neutral-soft);color:var(--text-dim);}
+  .scad-badge.breve{background:var(--success-soft);color:var(--success);}
+  .scad-badge.lungo{background:var(--warn-soft);color:var(--warn);}
+  .rdef-badge{font-size:10px;color:var(--text-faint);}
+  .classifica-editor{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
+    padding:12px;margin:6px 0 10px;display:grid;gap:10px;
+  }
+  .classifica-editor .field{margin-bottom:0;}
+  .classifica-editor .form-actions{margin-top:0;}
 
   .bilancio-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:7px 0;font-size:13.5px;border-top:1px solid var(--border);}
   .bilancio-row:first-child{border-top:none;}
@@ -213,6 +234,25 @@
   .subtabs{display:flex;gap:6px;margin-bottom:12px;background:var(--surface-2);padding:4px;border-radius:12px;border:1px solid var(--border);}
   .subtabs button{flex:1;border:none;background:transparent;padding:8px;border-radius:9px;font-weight:700;font-size:13.5px;color:var(--text-dim);cursor:pointer;min-height:42px;}
   .subtabs button.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow);}
+
+  .period-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-bottom:14px;}
+  .period-presets{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+  .period-presets button{
+    border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:12.5px;font-weight:700;
+    padding:8px 12px;border-radius:99px;cursor:pointer;min-height:38px;
+  }
+  .period-presets button.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+  .period-dates{display:flex;gap:8px;margin-bottom:12px;min-width:0;}
+  .period-dates .field{flex:1;margin-bottom:0;min-width:0;}
+  .accrual-row{display:flex;align-items:flex-start;gap:10px;padding-top:10px;border-top:1px solid var(--border);}
+  .accrual-row .switch{margin-top:2px;}
+  .accrual-row .accrual-text{font-size:12.5px;color:var(--text-dim);line-height:1.5;}
+  .accrual-row .accrual-text b{color:var(--text);}
+  .summary-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+  .summary-mini .mini-card{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;}
+  .summary-mini .mini-card .mini-label{font-size:11px;color:var(--text-faint);font-weight:700;margin-bottom:4px;}
+  .summary-mini .mini-card .mini-value{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;}
+  .summary-mini .mini-card .mini-sub{font-size:11px;color:var(--text-faint);margin-top:2px;}
 
   .empty{text-align:center;color:var(--text-faint);font-size:13.5px;padding:30px 10px;}
   footer.foot{text-align:center;color:var(--text-faint);font-size:11.5px;padding:26px 16px 10px;line-height:1.6;}
@@ -308,9 +348,48 @@
   .lato-toggle{display:flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;}
   .lato-toggle button{flex:1;border:none;background:var(--surface-2);color:var(--text-dim);font-size:12.5px;font-weight:700;padding:7px;cursor:pointer;}
   .lato-toggle button.active{background:var(--primary);color:#fff;}
+
+  .scad-list{display:grid;gap:10px;}
+  .scad-item{border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;background:var(--surface-2);}
+  .scad-item.overdue{border-color:var(--danger);background:var(--danger-soft);}
+  .scad-item .scad-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;}
+  .scad-item .scad-conto{font-weight:700;font-size:13.5px;}
+  .scad-item .scad-desc{font-size:12px;color:var(--text-faint);margin-top:2px;}
+  .scad-item .scad-importo{font-weight:700;white-space:nowrap;}
+  .scad-item .scad-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12px;color:var(--text-dim);gap:8px;flex-wrap:wrap;}
+  .scad-item .scad-data.overdue{color:var(--danger);font-weight:700;}
+  .scad-item button{flex:0 0 auto;}
+
+  .lock-screen{
+    position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  .lock-box{width:100%;max-width:340px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 22px;text-align:center;}
+  .lock-box h2{margin:0 0 8px;font-size:17px;}
+  .lock-box p{margin:0 0 16px;color:var(--text-dim);font-size:13.5px;line-height:1.5;}
+  .lock-box .field{text-align:left;}
+  .lock-error{color:var(--danger);font-size:12.5px;font-weight:700;margin-top:10px;}
+
+  @media print{
+    header.top nav.tabs, .btn, .btn-block, .toolbar-secondary, .searchbar, .chiprow, .subtabs,
+    .form-panel, .modelli-row, .draft-banner, footer.foot .btn, #trendPanel svg + div,
+    .conto-edit-btn, .period-panel, .lock-screen{ display:none !important; }
+    header.top{ position:static; backdrop-filter:none; background:none; }
+    body{ background:#fff; color:#000; padding-bottom:0; }
+    .panel, .stat-card, details.cat{ box-shadow:none; border:1px solid #ccc; break-inside:avoid; }
+    .wrap{ max-width:100%; }
+  }
 </style>
 </head>
 <body>
+<div class="lock-screen" id="lockScreen" style="display:none;">
+  <div class="lock-box">
+    <h2>Nordev — Contabilità</h2>
+    <p>Area riservata.<br>Inserire "Luca" per continuare.</p>
+    <div class="field"><input type="password" id="lockInput" placeholder="Password" autocomplete="off"></div>
+    <button class="btn primary btn-block" id="lockBtn">Entra</button>
+    <p class="lock-error" id="lockError" style="display:none;">Password errata, riprova.</p>
+  </div>
+</div>
 <header class="top">
   <div class="wrap">
     <div class="brand">
@@ -340,7 +419,11 @@
       <button class="btn secondary" id="btnExport"><span>⭳</span> Esporta dati</button>
       <label class="btn secondary" for="importFile"><span>⭱</span> Importa dati</label>
       <input type="file" id="importFile" accept="application/json" style="display:none;">
+      <button class="btn secondary" id="btnBackup"><span>🗄️</span> Backup (.zip)</button>
     </div>
+
+    <h2 class="section-title">Andamento mensile</h2>
+    <div class="panel" id="trendPanel"></div>
 
     <h2 class="section-title">Ultimi movimenti</h2>
     <div id="riepilogoMovimenti"></div>
@@ -360,12 +443,21 @@
     <div id="formPanel" class="form-panel" style="display:none;"></div>
     <div id="modelloEditorPanel" class="form-panel" style="display:none;"></div>
 
-    <div class="searchbar">
+    <div class="subtabs" id="giornaleViewTabs">
+      <button data-gview="elenco" class="active">Elenco movimenti</button>
+      <button data-gview="riclass">Totali per etichetta</button>
+      <button data-gview="scadenzario">Scadenzario</button>
+      <button data-gview="archivio">Archivio</button>
+    </div>
+    <button class="btn secondary btn-block" id="btnExportCsv" style="margin-bottom:14px;"><span>⭳</span> Esporta libro giornale (CSV per Excel)</button>
+    <div class="searchbar" id="giornaleSearchBar">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <input type="text" id="giornaleSearch" placeholder="Cerca per conto o descrizione…">
     </div>
     <div class="chiprow" id="riclassChips"></div>
     <div id="giornaleList"></div>
+    <div id="riclassTotali" style="display:none;"></div>
+    <div id="scadenzarioBody" style="display:none;"></div>
   </section>
 
   <section class="view" id="view-piano">
@@ -373,21 +465,32 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <input type="text" id="pianoSearch" placeholder="Cerca codice o voce di conto…">
     </div>
+    <div id="pianoBulkConfirm" style="display:none;"></div>
     <div id="pianoList"></div>
   </section>
 
   <section class="view" id="view-bilancio">
+    <div class="subtabs" id="bilancioModeTabs">
+      <button data-mode="excel" class="active">Fotografia Excel</button>
+      <button data-mode="periodo">Calcolato dai movimenti</button>
+    </div>
     <div class="subtabs" id="bilancioSubtabs">
       <button data-sub="sp" class="active">Stato Patrimoniale</button>
       <button data-sub="ce">Conto Economico</button>
     </div>
-    <div class="chiprow" id="anniChips"></div>
-    <div class="toggle-row">
-      <span>Mostra anche le voci a zero</span>
-      <div class="switch" id="zeroSwitch"></div>
+    <div id="bilancioExcelControls">
+      <div class="chiprow" id="anniChips"></div>
+      <div class="toggle-row">
+        <span>Mostra anche le voci a zero</span>
+        <div class="switch" id="zeroSwitch"></div>
+      </div>
     </div>
+    <div id="bilancioPeriodControls" style="display:none;"></div>
     <div class="note-box" id="bilancioNote" style="display:none;"></div>
     <div id="bilancioBody"></div>
+    <div id="rettificaReviewPanel" class="form-panel" style="display:none;"></div>
+    <button class="btn secondary btn-block" id="btnExportBilancioCsv" style="margin-top:14px;"><span>⭳</span> Esporta CSV per Excel</button>
+    <button class="btn secondary btn-block" id="btnStampaBilancio" style="margin-top:8px;">🖨️ Stampa / salva come PDF</button>
   </section>
 
 </main>
@@ -398,12 +501,51 @@
 </footer>
 
 <script>
+// ---------- Blocco con password ----------
+// ATTENZIONE: questa è solo una protezione "di cortesia", non una vera sicurezza. La password
+// e il controllo sono nel codice della pagina stessa (visibile a chiunque apra il file o usi
+// gli strumenti sviluppatore del browser) e il file, una volta aperto, è comunque interamente
+// sul dispositivo di chi lo apre. Non protegge i dati da chi ha accesso al file. Impostata così
+// solo su richiesta esplicita, in attesa di un vero sistema multiutente/autenticazione.
+const LOCK_PASSWORD = 'Luca';
+const LOCK_KEY = 'nordevContabilitaLock_v1';
+function unlockApp(){
+  try{ localStorage.setItem(LOCK_KEY, '1'); }catch(e){ /* storage non disponibile */ }
+  const ls = document.getElementById('lockScreen');
+  if(ls) ls.style.display = 'none';
+}
+function tryUnlock(){
+  const input = document.getElementById('lockInput');
+  const err = document.getElementById('lockError');
+  if(input && input.value === LOCK_PASSWORD){
+    if(err) err.style.display = 'none';
+    unlockApp();
+  } else {
+    if(err) err.style.display = 'block';
+    if(input){ input.value=''; input.focus(); }
+  }
+}
+(function initLock(){
+  let unlocked = false;
+  try{ unlocked = localStorage.getItem(LOCK_KEY) === '1'; }catch(e){ /* storage non disponibile: chiede sempre la password */ }
+  const ls = document.getElementById('lockScreen');
+  if(unlocked){
+    if(ls) ls.style.display = 'none';
+  } else if(ls){
+    ls.style.display = 'flex';
+  }
+  const btn = document.getElementById('lockBtn');
+  const input = document.getElementById('lockInput');
+  if(btn) btn.addEventListener('click', tryUnlock);
+  if(input) input.addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
+})();
+
 const INITIAL_DATA = {
   "meta": {
     "progetto": "Nordev — Contabilità",
     "fonteIniziale": "Nordev_Contabilità_bozza_v02.xlsx",
     "creato": "2026-09-20",
-    "aggiornato": "2026-09-21"
+    "aggiornato": "2026-09-22"
   },
   "piano": [
     {
@@ -413,43 +555,43 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 10.1,
+      "codice": "10.01",
       "conto": "Costi di impianto e ampliamento",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.2,
+      "codice": "10.02",
       "conto": "Costi di sviluppo",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.3,
+      "codice": "10.03",
       "conto": "Software di proprietà",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.4,
+      "codice": "10.04",
       "conto": "Diritti di brevetto e opere dell'ingegno",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.5,
+      "codice": "10.05",
       "conto": "Concessioni, licenze e marchi",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.6,
+      "codice": "10.06",
       "conto": "Altre immobilizzazioni immateriali",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 10.9,
+      "codice": "10.07",
       "conto": "Fondo ammortamento immobilizzazioni immateriali",
       "tipo": "Attivo rettificativo",
       "header": false
@@ -464,37 +606,37 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 11.1,
+      "codice": "11.01",
       "conto": "Macchine elettroniche e hardware",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.2,
+      "codice": "11.02",
       "conto": "Attrezzature",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.3,
+      "codice": "11.03",
       "conto": "Mobili e arredi",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.4,
+      "codice": "11.04",
       "conto": "Impianti",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 11.5,
+      "codice": "11.05",
       "conto": "Altri beni materiali",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 12,
+      "codice": "11.06",
       "conto": "Fondo ammortamento immobilizzazioni materiali",
       "tipo": "Attivo rettificativo",
       "header": false
@@ -509,16 +651,18 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 12.1,
+      "codice": "12.01",
       "conto": "Partecipazioni",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 12.2,
+      "codice": "12.02",
       "conto": "Crediti finanziari immobilizzati",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -530,13 +674,13 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 13.1,
+      "codice": "13.01",
       "conto": "Rimanenze di prodotti e lavori in corso",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 13.2,
+      "codice": "13.02",
       "conto": "Rimanenze di materiali di consumo",
       "tipo": "Attivo",
       "header": false
@@ -551,61 +695,79 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 14.1,
+      "codice": "14.01",
       "conto": "Crediti verso clienti",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.2,
+      "codice": "14.02",
       "conto": "Crediti verso clienti per fatture da emettere",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.3,
+      "codice": "14.03",
       "conto": "Note di credito da ricevere",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.4,
+      "codice": "14.04",
       "conto": "Crediti tributari",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.5,
+      "codice": "14.05",
       "conto": "Crediti verso Erario per IVA",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.6,
+      "codice": "14.06",
       "conto": "Crediti verso INPS",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.7,
+      "codice": "14.07",
       "conto": "Crediti verso amministratori",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.8,
+      "codice": "14.08",
       "conto": "Crediti verso dipendenti",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 14.9,
+      "codice": "14.09",
       "conto": "Crediti diversi",
       "tipo": "Attivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 15,
+      "codice": "14.10",
       "conto": "Fondo svalutazione crediti",
       "tipo": "Attivo rettificativo",
       "header": false
@@ -620,25 +782,25 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 15.1,
+      "codice": "15.01",
       "conto": "Banca c/c principale",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 15.2,
+      "codice": "15.02",
       "conto": "Banca c/c secondario",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 15.3,
+      "codice": "15.03",
       "conto": "Cassa contanti",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 15.4,
+      "codice": "15.04",
       "conto": "Carte aziendali",
       "tipo": "Attivo",
       "header": false
@@ -653,13 +815,13 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 16.1,
+      "codice": "16.01",
       "conto": "Ratei attivi",
       "tipo": "Attivo",
       "header": false
     },
     {
-      "codice": 16.2,
+      "codice": "16.02",
       "conto": "Risconti attivi",
       "tipo": "Attivo",
       "header": false
@@ -674,43 +836,43 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 20.1,
+      "codice": "20.01",
       "conto": "Capitale sociale",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.2,
+      "codice": "20.02",
       "conto": "Riserva legale",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.3,
+      "codice": "20.03",
       "conto": "Altre riserve",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.4,
+      "codice": "20.04",
       "conto": "Utili portati a nuovo",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.5,
+      "codice": "20.05",
       "conto": "Perdite portate a nuovo",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.6,
+      "codice": "20.06",
       "conto": "Utile dell'esercizio",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 20.7,
+      "codice": "20.07",
       "conto": "Perdita dell'esercizio",
       "tipo": "Passivo",
       "header": false
@@ -725,13 +887,13 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 21.1,
+      "codice": "21.01",
       "conto": "Fondo rischi",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 21.2,
+      "codice": "21.02",
       "conto": "Fondo oneri futuri",
       "tipo": "Passivo",
       "header": false
@@ -746,7 +908,7 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 22.1,
+      "codice": "22.01",
       "conto": "Fondo trattamento di fine rapporto",
       "tipo": "Passivo",
       "header": false
@@ -761,22 +923,28 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 23.1,
+      "codice": "23.01",
       "conto": "Mutui e finanziamenti bancari",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
-      "codice": 23.2,
+      "codice": "23.02",
       "conto": "Finanziamenti soci",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
-      "codice": 23.3,
+      "codice": "23.03",
       "conto": "Debiti verso soci per finanziamenti",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "lungo",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -788,22 +956,28 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 24.1,
+      "codice": "24.01",
       "conto": "Debiti verso fornitori",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 24.2,
+      "codice": "24.02",
       "conto": "Fatture da ricevere",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 24.3,
+      "codice": "24.03",
       "conto": "Note di credito da emettere",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -815,34 +989,44 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 25.1,
+      "codice": "25.01",
       "conto": "Erario c/IVA",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.2,
+      "codice": "25.02",
       "conto": "Erario c/ritenute",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.3,
+      "codice": "25.03",
       "conto": "Erario c/IRES",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.4,
+      "codice": "25.04",
       "conto": "Erario c/IRAP",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 25.5,
+      "codice": "25.05",
       "conto": "Altri debiti tributari",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -854,22 +1038,28 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 26.1,
+      "codice": "26.01",
       "conto": "INPS c/contributi",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 26.2,
+      "codice": "26.02",
       "conto": "INAIL c/contributi",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 26.3,
+      "codice": "26.03",
       "conto": "Altri enti previdenziali",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -881,28 +1071,36 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 27.1,
+      "codice": "27.01",
       "conto": "Debiti verso dipendenti",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 27.2,
+      "codice": "27.02",
       "conto": "Debiti verso amministratori",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 27.3,
+      "codice": "27.03",
       "conto": "Debiti diversi",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
-      "codice": 27.4,
+      "codice": "27.04",
       "conto": "Anticipi da clienti",
       "tipo": "Passivo",
-      "header": false
+      "header": false,
+      "scadenza": "breve",
+      "scadenzaAuto": true
     },
     {
       "sep": true
@@ -914,13 +1112,13 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 28.1,
+      "codice": "28.01",
       "conto": "Ratei passivi",
       "tipo": "Passivo",
       "header": false
     },
     {
-      "codice": 28.2,
+      "codice": "28.02",
       "conto": "Risconti passivi",
       "tipo": "Passivo",
       "header": false
@@ -935,25 +1133,25 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 30.1,
+      "codice": "30.01",
       "conto": "Acquisti materie prime e materiali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 30.2,
+      "codice": "30.02",
       "conto": "Materiali di consumo",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 30.3,
+      "codice": "30.03",
       "conto": "Cancelleria e materiale d'ufficio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 30.4,
+      "codice": "30.04",
       "conto": "Materiale informatico di consumo",
       "tipo": "Conto economico",
       "header": false
@@ -968,121 +1166,121 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 31.1,
+      "codice": "31.01",
       "conto": "Servizi informatici",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.2,
+      "codice": "31.02",
       "conto": "Cloud computing",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.3,
+      "codice": "31.03",
       "conto": "Hosting e server",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.4,
+      "codice": "31.04",
       "conto": "Domini internet",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.5,
+      "codice": "31.05",
       "conto": "Licenze software e SaaS",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.6,
+      "codice": "31.06",
       "conto": "Consulenze informatiche",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.7,
+      "codice": "31.07",
       "conto": "Consulenze amministrative e contabili",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.8,
+      "codice": "31.08",
       "conto": "Consulenze legali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 31.9,
+      "codice": "31.09",
       "conto": "Consulenze fiscali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32,
+      "codice": "31.10",
       "conto": "Consulenze professionali varie",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.1,
+      "codice": "31.11",
       "conto": "Manutenzioni hardware",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.2,
+      "codice": "31.12",
       "conto": "Manutenzioni software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.3,
+      "codice": "31.13",
       "conto": "Servizi di pulizia",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.4,
+      "codice": "31.14",
       "conto": "Utenze energia elettrica",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.5,
+      "codice": "31.15",
       "conto": "Utenze telefoniche",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.6,
+      "codice": "31.16",
       "conto": "Utenze internet",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.7,
+      "codice": "31.17",
       "conto": "Spese postali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.8,
+      "codice": "31.18",
       "conto": "Spese bancarie",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 32.9,
+      "codice": "31.19",
       "conto": "Spese di pagamento elettronico",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33,
+      "codice": "31.20",
       "conto": "Assicurazioni",
       "tipo": "Conto economico",
       "header": false
@@ -1097,49 +1295,49 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 33.1,
+      "codice": "33.01",
       "conto": "Pubblicità e marketing",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.2,
+      "codice": "33.02",
       "conto": "Fiere ed eventi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.3,
+      "codice": "33.03",
       "conto": "Rappresentanza",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.4,
+      "codice": "33.04",
       "conto": "Servizi commerciali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.5,
+      "codice": "33.05",
       "conto": "Provvigioni ad agenti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.6,
+      "codice": "33.06",
       "conto": "Spese di trasporto e spedizione",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.7,
+      "codice": "33.07",
       "conto": "Spese di viaggio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 33.8,
+      "codice": "33.08",
       "conto": "Vitto e alloggio",
       "tipo": "Conto economico",
       "header": false
@@ -1154,25 +1352,25 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 34.1,
+      "codice": "34.01",
       "conto": "Canoni di locazione",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 34.2,
+      "codice": "34.02",
       "conto": "Noleggi hardware",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 34.3,
+      "codice": "34.03",
       "conto": "Noleggi automezzi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 34.4,
+      "codice": "34.04",
       "conto": "Leasing",
       "tipo": "Conto economico",
       "header": false
@@ -1187,43 +1385,43 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 35.1,
+      "codice": "35.01",
       "conto": "Salari e stipendi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.2,
+      "codice": "35.02",
       "conto": "Contributi previdenziali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.3,
+      "codice": "35.03",
       "conto": "Contributi INAIL",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.4,
+      "codice": "35.04",
       "conto": "Accantonamento TFR",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.5,
+      "codice": "35.05",
       "conto": "Altri costi del personale",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.6,
+      "codice": "35.06",
       "conto": "Formazione del personale",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 35.7,
+      "codice": "35.07",
       "conto": "Mensa e buoni pasto",
       "tipo": "Conto economico",
       "header": false
@@ -1238,19 +1436,19 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 36.1,
+      "codice": "36.01",
       "conto": "Compensi amministratori",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 36.2,
+      "codice": "36.02",
       "conto": "Contributi previdenziali amministratori",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 36.3,
+      "codice": "36.03",
       "conto": "Spese rimborsate agli amministratori",
       "tipo": "Conto economico",
       "header": false
@@ -1265,37 +1463,37 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 37.1,
+      "codice": "37.01",
       "conto": "Quote associative",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.2,
+      "codice": "37.02",
       "conto": "Spese per sicurezza sul lavoro",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.3,
+      "codice": "37.03",
       "conto": "Spese per privacy e GDPR",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.4,
+      "codice": "37.04",
       "conto": "Spese notarili",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.5,
+      "codice": "37.05",
       "conto": "Spese camerali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 37.6,
+      "codice": "37.06",
       "conto": "Spese amministrative varie",
       "tipo": "Conto economico",
       "header": false
@@ -1310,31 +1508,31 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 38.1,
+      "codice": "38.01",
       "conto": "Ammortamento immobilizzazioni immateriali",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.2,
+      "codice": "38.02",
       "conto": "Ammortamento software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.3,
+      "codice": "38.03",
       "conto": "Ammortamento hardware",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.4,
+      "codice": "38.04",
       "conto": "Ammortamento mobili e arredi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 38.5,
+      "codice": "38.05",
       "conto": "Ammortamento altre immobilizzazioni materiali",
       "tipo": "Conto economico",
       "header": false
@@ -1349,19 +1547,19 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 39.1,
+      "codice": "39.01",
       "conto": "Accantonamento svalutazione crediti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 39.2,
+      "codice": "39.02",
       "conto": "Accantonamenti per rischi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 39.3,
+      "codice": "39.03",
       "conto": "Altri accantonamenti",
       "tipo": "Conto economico",
       "header": false
@@ -1376,49 +1574,49 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 40.1,
+      "codice": "40.01",
       "conto": "Imposte e tasse diverse da imposte sul reddito",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.2,
+      "codice": "40.02",
       "conto": "IMU",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.3,
+      "codice": "40.03",
       "conto": "Tassa rifiuti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.4,
+      "codice": "40.04",
       "conto": "Diritto annuale Camera di Commercio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.5,
+      "codice": "40.05",
       "conto": "Sanzioni e penalità",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.6,
+      "codice": "40.06",
       "conto": "Perdite su crediti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.7,
+      "codice": "40.07",
       "conto": "Minusvalenze",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 40.8,
+      "codice": "40.08",
       "conto": "Altri oneri diversi di gestione",
       "tipo": "Conto economico",
       "header": false
@@ -1433,85 +1631,85 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 50.1,
+      "codice": "50.01",
       "conto": "Ricavi da sviluppo software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.2,
+      "codice": "50.02",
       "conto": "Ricavi da sviluppo siti web",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.3,
+      "codice": "50.03",
       "conto": "Ricavi da sviluppo applicazioni",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.4,
+      "codice": "50.04",
       "conto": "Ricavi da consulenza informatica",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.5,
+      "codice": "50.05",
       "conto": "Ricavi da assistenza e manutenzione",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.6,
+      "codice": "50.06",
       "conto": "Ricavi da hosting",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.7,
+      "codice": "50.07",
       "conto": "Ricavi da servizi cloud",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.8,
+      "codice": "50.08",
       "conto": "Ricavi da licenze software",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 50.9,
+      "codice": "50.09",
       "conto": "Ricavi da abbonamenti SaaS",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51,
+      "codice": "50.10",
       "conto": "Ricavi da servizi ricorrenti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51.1,
+      "codice": "50.11",
       "conto": "Altri ricavi e proventi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51.2,
+      "codice": "50.12",
       "conto": "Rimborsi spese da clienti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 51.3,
+      "codice": "50.13",
       "conto": "Plusvalenze",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 52,
+      "codice": "50.14",
       "conto": "Abbuoni e sconti concessi",
       "tipo": "Conto economico rettificativo",
       "header": false
@@ -1526,19 +1724,19 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 60.1,
+      "codice": "60.01",
       "conto": "Interessi attivi bancari",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 60.2,
+      "codice": "60.02",
       "conto": "Interessi attivi da clienti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 60.3,
+      "codice": "60.03",
       "conto": "Altri proventi finanziari",
       "tipo": "Conto economico",
       "header": false
@@ -1553,25 +1751,25 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 61.1,
+      "codice": "61.01",
       "conto": "Interessi passivi su mutui",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 61.2,
+      "codice": "61.02",
       "conto": "Interessi passivi bancari",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 61.3,
+      "codice": "61.03",
       "conto": "Interessi passivi su finanziamenti soci",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 61.4,
+      "codice": "61.04",
       "conto": "Altri oneri finanziari",
       "tipo": "Conto economico",
       "header": false
@@ -1586,13 +1784,13 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 62.1,
+      "codice": "62.01",
       "conto": "Utili su cambi",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 62.2,
+      "codice": "62.02",
       "conto": "Perdite su cambi",
       "tipo": "Conto economico",
       "header": false
@@ -1607,31 +1805,31 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 70.1,
+      "codice": "70.01",
       "conto": "IRAP dell'esercizio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.2,
+      "codice": "70.02",
       "conto": "IRES dell'esercizio",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.3,
+      "codice": "70.03",
       "conto": "Imposte relative a esercizi precedenti",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.4,
+      "codice": "70.04",
       "conto": "Imposte anticipate",
       "tipo": "Conto economico",
       "header": false
     },
     {
-      "codice": 70.5,
+      "codice": "70.05",
       "conto": "Imposte differite",
       "tipo": "Conto economico",
       "header": false
@@ -1646,25 +1844,25 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 80.1,
+      "codice": "80.01",
       "conto": "IVA a debito",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 80.2,
+      "codice": "80.02",
       "conto": "IVA a credito",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 80.3,
+      "codice": "80.03",
       "conto": "IVA indetraibile",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 80.4,
+      "codice": "80.04",
       "conto": "Liquidazione IVA",
       "tipo": "Transitorio",
       "header": false
@@ -1679,19 +1877,19 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 81.1,
+      "codice": "81.01",
       "conto": "Erario c/ritenute dipendenti",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 81.2,
+      "codice": "81.02",
       "conto": "INPS c/contributi dipendenti",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 81.3,
+      "codice": "81.03",
       "conto": "INAIL c/contributi",
       "tipo": "Transitorio",
       "header": false
@@ -1706,19 +1904,19 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 82.1,
+      "codice": "82.01",
       "conto": "Anticipi a fornitori",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 82.2,
+      "codice": "82.02",
       "conto": "Anticipi da clienti",
       "tipo": "Transitorio",
       "header": false
     },
     {
-      "codice": 82.3,
+      "codice": "82.03",
       "conto": "Partite da regolare",
       "tipo": "Transitorio",
       "header": false
@@ -1733,19 +1931,19 @@ const INITIAL_DATA = {
       "header": true
     },
     {
-      "codice": 90.1,
+      "codice": "90.01",
       "conto": "Conto economico",
       "tipo": "Chiusura",
       "header": false
     },
     {
-      "codice": 90.2,
+      "codice": "90.02",
       "conto": "Stato patrimoniale",
       "tipo": "Chiusura",
       "header": false
     },
     {
-      "codice": 90.3,
+      "codice": "90.03",
       "conto": "Profitti e perdite",
       "tipo": "Chiusura",
       "header": false
@@ -1760,19 +1958,19 @@ const INITIAL_DATA = {
       "competenzaAl": null,
       "righe": [
         {
-          "codice": 14.1,
+          "codice": "14.01",
           "dare": 2500,
           "avere": 0,
           "riclass": "Crediti operativi a breve termine"
         },
         {
-          "codice": 80.1,
+          "codice": "80.01",
           "dare": 0,
           "avere": 0,
           "riclass": null
         },
         {
-          "codice": 50.1,
+          "codice": "50.01",
           "dare": 0,
           "avere": 2500,
           "riclass": null
@@ -1787,13 +1985,13 @@ const INITIAL_DATA = {
       "competenzaAl": null,
       "righe": [
         {
-          "codice": 15.3,
+          "codice": "15.03",
           "dare": 2500,
           "avere": 0,
           "riclass": null
         },
         {
-          "codice": 14.1,
+          "codice": "14.01",
           "dare": 0,
           "avere": 2500,
           "riclass": "Crediti operativi a breve termine"
@@ -3459,13 +3657,13 @@ const INITIAL_DATA = {
       "pluriennale": false,
       "righe": [
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "dare",
           "esempio": 1000,
           "riclass": ""
         },
         {
-          "codice": "50.1",
+          "codice": "50.01",
           "lato": "avere",
           "esempio": 1000,
           "riclass": ""
@@ -3479,13 +3677,13 @@ const INITIAL_DATA = {
       "pluriennale": false,
       "righe": [
         {
-          "codice": "14.1",
+          "codice": "14.01",
           "lato": "dare",
           "esempio": 1500,
           "riclass": "Crediti operativi a breve termine"
         },
         {
-          "codice": "50.1",
+          "codice": "50.01",
           "lato": "avere",
           "esempio": 1500,
           "riclass": ""
@@ -3499,13 +3697,13 @@ const INITIAL_DATA = {
       "pluriennale": false,
       "righe": [
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "dare",
           "esempio": 1500,
           "riclass": ""
         },
         {
-          "codice": "14.1",
+          "codice": "14.01",
           "lato": "avere",
           "esempio": 1500,
           "riclass": "Crediti operativi a breve termine"
@@ -3519,13 +3717,13 @@ const INITIAL_DATA = {
       "pluriennale": false,
       "righe": [
         {
-          "codice": "31.1",
+          "codice": "31.01",
           "lato": "dare",
           "esempio": 100,
           "riclass": ""
         },
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "avere",
           "esempio": 100,
           "riclass": ""
@@ -3539,13 +3737,13 @@ const INITIAL_DATA = {
       "pluriennale": false,
       "righe": [
         {
-          "codice": "31.1",
+          "codice": "31.01",
           "lato": "dare",
           "esempio": 200,
           "riclass": ""
         },
         {
-          "codice": "24.1",
+          "codice": "24.01",
           "lato": "avere",
           "esempio": 200,
           "riclass": ""
@@ -3559,13 +3757,13 @@ const INITIAL_DATA = {
       "pluriennale": false,
       "righe": [
         {
-          "codice": "24.1",
+          "codice": "24.01",
           "lato": "dare",
           "esempio": 200,
           "riclass": ""
         },
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "avere",
           "esempio": 200,
           "riclass": ""
@@ -3579,13 +3777,13 @@ const INITIAL_DATA = {
       "pluriennale": true,
       "righe": [
         {
-          "codice": "31.5",
+          "codice": "31.05",
           "lato": "dare",
           "esempio": 120,
           "riclass": ""
         },
         {
-          "codice": "15.3",
+          "codice": "15.03",
           "lato": "avere",
           "esempio": 120,
           "riclass": ""
@@ -3599,13 +3797,13 @@ const INITIAL_DATA = {
       "pluriennale": false,
       "righe": [
         {
-          "codice": "15.1",
+          "codice": "15.01",
           "lato": "dare",
           "esempio": 5000,
           "riclass": ""
         },
         {
-          "codice": "23.2",
+          "codice": "23.02",
           "lato": "avere",
           "esempio": 5000,
           "riclass": ""
@@ -3654,11 +3852,19 @@ function buildPianoIndex(piano){
   return idx;
 }
 
+// Una registrazione "archiviata" è l'equivalente della cancellazione dal punto di vista
+// dell'utente, ma per legge (art. 2219 c.c.) le scritture contabili non si cancellano o
+// sovrascrivono senza lasciare traccia: resta quindi nei dati, consultabile e modificabile
+// nell'Archivio, semplicemente esclusa da saldi, bilancio e riepiloghi.
+function activeMovimenti(state){
+  return state.movimenti.filter(m=>!m.archiviato);
+}
+
 function computeSaldi(state){
   const idx = buildPianoIndex(state.piano);
   const acc = {};
   for(const code in idx) acc[code] = {dare:0, avere:0};
-  for(const m of state.movimenti){
+  for(const m of activeMovimenti(state)){
     for(const r of m.righe){
       const code = String(r.codice);
       if(!acc[code]) acc[code] = {dare:0, avere:0};
@@ -3696,14 +3902,16 @@ function computeRiepilogo(state, saldi){
     }
   }
   const utile = ricavi - costi;
-  const cassa = (saldi['15.1']?.raw||0) + (saldi['15.2']?.raw||0) + (saldi['15.3']?.raw||0) + (saldi['15.4']?.raw||0);
-  const crediti = saldi['14.1'] ? Math.max(saldi['14.1'].raw,0) : 0;
-  const sorted = state.movimenti.slice().sort((a,b)=> new Date(a.data) - new Date(b.data));
+  let cassa = 0;
+  for(const code of cashAccountCodes()) cassa += (saldi[code]?.raw || 0);
+  const crediti = saldi['14.01'] ? Math.max(saldi['14.01'].raw,0) : 0;
+  const attivi = activeMovimenti(state);
+  const sorted = attivi.slice().sort((a,b)=> new Date(a.data) - new Date(b.data));
   const ultimo = sorted.length ? sorted[sorted.length-1].data : null;
   return {
     cassa, ricavi, costi, utile, crediti,
     totAttivo, totPassivo,
-    nMovimenti: state.movimenti.length,
+    nMovimenti: attivi.length,
     ultimoMovimento: ultimo,
     quadratura: {dare: Math.round(dareGlobale*100)/100, avere: Math.round(avereGlobale*100)/100, ok: Math.abs(dareGlobale-avereGlobale) < 0.005},
   };
@@ -3754,9 +3962,99 @@ function goToTab(tab){
 }
 
 // ---------- Riepilogo ----------
+function cashAccountCodes(){
+  const g = PIANO_GROUPS.find(g=>g.title === 'DISPONIBILITÀ LIQUIDE');
+  return g ? new Set(g.items.map(it=>String(it.codice))) : new Set();
+}
+
+function computeMonthlySeries(state){
+  const idx = buildPianoIndex(state.piano);
+  const cashCodes = cashAccountCodes();
+  const months = {};
+  for(const m of activeMovimenti(state)){
+    const key = String(m.data).slice(0,7);
+    if(!key || key.length!==7) continue;
+    if(!months[key]) months[key] = {ricavi:0, costi:0, cassaDelta:0};
+    for(const r of m.righe){
+      const p = idx[String(r.codice)];
+      const tipo = p ? p.tipo : '';
+      const dare = Number(r.dare)||0, avere = Number(r.avere)||0;
+      if(tipo==='Conto economico' || tipo==='Conto economico rettificativo'){
+        const val = avere - dare;
+        if(val>=0) months[key].ricavi += val; else months[key].costi += -val;
+      }
+      if(cashCodes.has(String(r.codice))){
+        months[key].cassaDelta += dare - avere;
+      }
+    }
+  }
+  const keys = Object.keys(months).sort();
+  if(keys.length===0) return [];
+  const [y0,m0] = keys[0].split('-').map(Number);
+  const [y1,m1] = keys[keys.length-1].split('-').map(Number);
+  const series = [];
+  let cassaCum = 0;
+  let y=y0, m=m0;
+  let guard = 0;
+  while((y<y1 || (y===y1 && m<=m1)) && guard < 240){
+    guard++;
+    const key = `${y}-${String(m).padStart(2,'0')}`;
+    const rec = months[key] || {ricavi:0, costi:0, cassaDelta:0};
+    cassaCum += rec.cassaDelta;
+    series.push({key, label: `${String(m).padStart(2,'0')}/${String(y).slice(2)}`, ricavi:rec.ricavi, costi:rec.costi, cassa:cassaCum});
+    m++; if(m>12){m=1;y++;}
+  }
+  return series;
+}
+
+function trendChartSVG(series){
+  if(series.length===0) return '<div class="empty">Nessun dato per il grafico: registra almeno un movimento.</div>';
+  const W = 320, H = 150, padL=8, padR=8, padT=10, padB=22;
+  const innerW = W-padL-padR, innerH = H-padT-padB;
+  const maxVal = Math.max(1, ...series.map(s=>Math.max(s.ricavi,s.costi)));
+  const n = series.length;
+  const bw = innerW/n;
+  const bars = series.map((s,i)=>{
+    const x = padL + i*bw;
+    const hR = (s.ricavi/maxVal)*innerH;
+    const hC = (s.costi/maxVal)*innerH;
+    const halfW = Math.max(2, bw*0.32);
+    const xR = x + bw*0.14;
+    const xC = x + bw*0.54;
+    return `<rect x="${xR.toFixed(1)}" y="${(padT+innerH-hR).toFixed(1)}" width="${halfW.toFixed(1)}" height="${hR.toFixed(1)}" fill="var(--success)" rx="2"></rect>` +
+      `<rect x="${xC.toFixed(1)}" y="${(padT+innerH-hC).toFixed(1)}" width="${halfW.toFixed(1)}" height="${hC.toFixed(1)}" fill="var(--danger)" rx="2"></rect>` +
+      `<text x="${(x+bw/2).toFixed(1)}" y="${H-6}" font-size="9" text-anchor="middle" fill="var(--text-faint)">${s.label}</text>`;
+  }).join('');
+  const cassaVals = series.map(s=>s.cassa);
+  const cMin = Math.min(0, ...cassaVals), cMax = Math.max(1, ...cassaVals);
+  const cRange = (cMax-cMin)||1;
+  const points = series.map((s,i)=>{
+    const x = padL + i*bw + bw/2;
+    const y = padT + innerH - ((s.cassa-cMin)/cRange)*innerH;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  return `
+    <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;" role="img" aria-label="Andamento mensile di ricavi, costi e cassa">
+      ${bars}
+      <polyline points="${points}" fill="none" stroke="var(--primary)" stroke-width="2"></polyline>
+    </svg>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:8px;flex-wrap:wrap;font-size:11px;color:var(--text-dim);">
+      <span><span style="display:inline-block;width:9px;height:9px;background:var(--success);border-radius:2px;margin-right:4px;vertical-align:middle;"></span>Ricavi/mese</span>
+      <span><span style="display:inline-block;width:9px;height:9px;background:var(--danger);border-radius:2px;margin-right:4px;vertical-align:middle;"></span>Costi/mese</span>
+      <span><span style="display:inline-block;width:9px;height:2px;background:var(--primary);margin-right:4px;vertical-align:middle;"></span>Cassa cumulata</span>
+    </div>
+  `;
+}
+
+function renderTrendPanel(){
+  const series = computeMonthlySeries(STATE);
+  document.getElementById('trendPanel').innerHTML = trendChartSVG(series);
+}
+
 function renderRiepilogo(){
   const saldi = computeSaldi(STATE);
   const r = computeRiepilogo(STATE, saldi);
+  renderTrendPanel();
   const cards = [
     {label:'Cassa disponibile', value: money(r.cassa), cls:''},
     {label:'Ricavi totali', value: money(r.ricavi), cls:'pos'},
@@ -3771,8 +4069,9 @@ function renderRiepilogo(){
   `).join('');
 
   const mDiv = document.getElementById('riepilogoMovimenti');
-  const last = STATE.movimenti.slice().sort((a,b)=> new Date(a.data)-new Date(b.data)).slice(-3).reverse();
-  mDiv.innerHTML = last.map(movimentoCardHTML).join('') || '<div class="empty">Nessun movimento registrato. Usa "Nuova registrazione" per iniziare.</div>';
+  const last = activeMovimenti(STATE).slice().sort((a,b)=> new Date(a.data)-new Date(b.data)).slice(-3).reverse();
+  mDiv.innerHTML = last.map(m=>movimentoCardHTML(m,'elenco')).join('') || '<div class="empty">Nessun movimento registrato. Usa "Nuova registrazione" per iniziare.</div>';
+  bindMovimentoCardActions(mDiv);
 
   document.getElementById('riepilogoNote').innerHTML =
     (r.quadratura.ok
@@ -3782,7 +4081,8 @@ function renderRiepilogo(){
     `la sezione Bilancio mostra invece la fotografia formale del file Excel originale (non si aggiorna da sola con le nuove registrazioni).`;
 }
 
-function movimentoCardHTML(m){
+function movimentoCardHTML(m, mode){
+  mode = mode || 'elenco'; // 'elenco' (✎ + 🗑 archivia) | 'archivio' (✎ + ↩ ripristina)
   const righe = m.righe.map(r=>{
     const p = PIANO_INDEX[String(r.codice)];
     const nome = p ? p.conto : (r.conto || r.codice);
@@ -3797,24 +4097,126 @@ function movimentoCardHTML(m){
   const badge = isPluriennale(m)
     ? `<span class="pluriennale-badge" title="Competenza dal ${fmtDate(m.competenzaDal)} al ${fmtDate(m.competenzaAl)} — verificare ratei/risconti a fine esercizio">⏳ pluriennale</span>`
     : '';
+  const archBadge = m.archiviato ? `<span class="archiviato-badge" title="Archiviata il ${fmtDate(m.archiviatoIl)} — esclusa da saldi e bilancio">📦 archiviata</span>` : '';
+  const actions = mode === 'archivio'
+    ? `<div class="m-actions">
+        <button class="btn small" data-mod-edit="${m.id}" title="Modifica">✎ Modifica</button>
+        <button class="btn small" data-mod-restore="${m.id}" title="Ripristina">↩ Ripristina</button>
+      </div>`
+    : `<div class="m-actions">
+        <button class="btn small" data-mod-edit="${m.id}" title="Modifica">✎ Modifica</button>
+        <button class="btn small danger" data-mod-archive="${m.id}" title="Archivia">🗑 Archivia</button>
+      </div>`;
   return `
-    <div class="movimento" data-id="${m.id}">
+    <div class="movimento${m.archiviato ? ' archiviato' : ''}" data-id="${m.id}">
       <div class="mtop">
-        <span class="mdesc">${m.descrizione}${badge}</span>
+        <span class="mdesc">${m.descrizione}${badge}${archBadge}</span>
         <span class="mdate">${fmtDate(m.data)}</span>
       </div>
       <div class="mamt">${money(totale)}</div>
       <div class="righe">${righe}</div>
+      ${actions}
     </div>
   `;
 }
 
+function bindMovimentoCardActions(container){
+  container.querySelectorAll('[data-mod-edit]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const m = STATE.movimenti.find(x=>x.id===b.dataset.modEdit);
+      if(m) apriFormModifica(m);
+    });
+  });
+  container.querySelectorAll('[data-mod-archive]').forEach(b=>{
+    b.addEventListener('click', ()=> archiviaMovimento(b.dataset.modArchive));
+  });
+  container.querySelectorAll('[data-mod-restore]').forEach(b=>{
+    b.addEventListener('click', ()=> ripristinaMovimento(b.dataset.modRestore));
+  });
+}
+
+// Archiviare una registrazione NON la elimina davvero: per legge (art. 2219 c.c.) le
+// scritture contabili non si cancellano o sovrascrivono senza lasciare traccia. Il record
+// resta nei dati (visibile e modificabile in Archivio), viene solo escluso da saldi,
+// bilancio e riepiloghi tramite activeMovimenti().
+function archiviaMovimento(id){
+  const m = STATE.movimenti.find(x=>x.id===id);
+  if(!m) return;
+  if(!confirm(`Archiviare la registrazione "${m.descrizione}"?\n\nNon verrà eliminata: resterà consultabile e modificabile nell'Archivio, ma non conterà più nei saldi e nel bilancio.\n\nPer legge (art. 2219 c.c.) le scritture contabili non si cancellano o sovrascrivono senza lasciare traccia.`)) return;
+  m.archiviato = true;
+  m.archiviatoIl = new Date().toISOString();
+  saveState();
+  renderAll();
+}
+function ripristinaMovimento(id){
+  const m = STATE.movimenti.find(x=>x.id===id);
+  if(!m) return;
+  m.archiviato = false;
+  saveState();
+  renderAll();
+}
+
 // ---------- Giornale ----------
 let giornaleState = {search:'', riclass:null, soloPluriennali:false};
+let giornaleView = 'elenco'; // 'elenco' | 'riclass' | 'archivio'
+
+document.getElementById('giornaleViewTabs').addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-gview]');
+  if(!btn) return;
+  giornaleView = btn.dataset.gview;
+  document.querySelectorAll('#giornaleViewTabs button').forEach(b=>b.classList.toggle('active', b===btn));
+  const isRiclass = giornaleView === 'riclass';
+  const isArchivio = giornaleView === 'archivio';
+  const isScadenzario = giornaleView === 'scadenzario';
+  document.getElementById('giornaleSearchBar').style.display = (isRiclass||isArchivio||isScadenzario) ? 'none' : '';
+  document.getElementById('riclassChips').style.display = (isRiclass||isArchivio||isScadenzario) ? 'none' : '';
+  document.getElementById('giornaleList').style.display = (isRiclass||isScadenzario) ? 'none' : '';
+  document.getElementById('riclassTotali').style.display = isRiclass ? '' : 'none';
+  document.getElementById('scadenzarioBody').style.display = isScadenzario ? '' : 'none';
+  if(isRiclass) renderRiclassTotali();
+  else if(isScadenzario) renderScadenzario();
+  else renderGiornale();
+});
+
+function riclassTotals(){
+  const totals = {};
+  for(const m of activeMovimenti(STATE)){
+    for(const r of m.righe){
+      if(!r.riclass) continue;
+      if(!totals[r.riclass]) totals[r.riclass] = {dare:0, avere:0, ids:new Set()};
+      totals[r.riclass].dare += Number(r.dare)||0;
+      totals[r.riclass].avere += Number(r.avere)||0;
+      totals[r.riclass].ids.add(m.id);
+    }
+  }
+  return totals;
+}
+
+function renderRiclassTotali(){
+  const totals = riclassTotals();
+  const labels = Object.keys(totals).sort();
+  const container = document.getElementById('riclassTotali');
+  if(labels.length===0){
+    container.innerHTML = '<div class="empty">Nessuna riga ha ancora un\'etichetta di riclassificazione. Aggiungila dalle registrazioni, oppure imposta una riclassificazione di default sui conti dal Piano dei Conti.</div>';
+    return;
+  }
+  container.innerHTML = labels.map(l=>{
+    const t = totals[l];
+    const raw = t.dare - t.avere;
+    const mag = Math.abs(raw);
+    const lato = raw>=0 ? 'Dare' : 'Avere';
+    return `<div class="panel">
+      <div class="conto-row" style="border-top:none;padding-top:0;">
+        <div class="conto-left"><span class="conto-name">🏷 ${l}</span><span class="conto-code">${t.ids.size} registrazion${t.ids.size===1?'e':'i'}</span></div>
+        <div class="conto-right"><span class="saldo-val">${money(mag)} <span style="opacity:.6;font-weight:600;">${lato}</span></span></div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
 function allRiclassLabels(){
   const set = new Set();
-  for(const m of STATE.movimenti) for(const r of m.righe) if(r.riclass) set.add(r.riclass);
+  for(const m of activeMovimenti(STATE)) for(const r of m.righe) if(r.riclass) set.add(r.riclass);
   return Array.from(set).sort();
 }
 
@@ -3840,9 +4242,20 @@ function renderRiclassChips(){
 }
 
 function renderGiornale(){
+  if(giornaleView === 'archivio'){
+    const container = document.getElementById('giornaleList');
+    const archiviati = STATE.movimenti.filter(m=>m.archiviato).slice().sort((a,b)=> new Date(a.data)-new Date(b.data)).reverse();
+    container.innerHTML =
+      `<div class="note-box" style="background:var(--neutral-soft);color:var(--text-dim);margin-bottom:12px;">`+
+      `<span>📦</span><span>Le registrazioni archiviate non contano più nei saldi, nel bilancio e nei riepiloghi. Non vengono mai eliminate del tutto: per legge (art. 2219 c.c.) le scritture contabili non si cancellano o sovrascrivono senza lasciare traccia. Puoi correggerle o riportarle attive in qualsiasi momento.</span>`+
+      `</div>` +
+      (archiviati.map(m=>movimentoCardHTML(m,'archivio')).join('') || '<div class="empty">Nessuna registrazione archiviata.</div>');
+    bindMovimentoCardActions(container);
+    return;
+  }
   renderRiclassChips();
   const f = giornaleState.search.trim().toLowerCase();
-  let list = STATE.movimenti.filter(m=>{
+  let list = activeMovimenti(STATE).filter(m=>{
     if(giornaleState.soloPluriennali && !isPluriennale(m)) return false;
     if(giornaleState.riclass && !m.righe.some(r=>r.riclass===giornaleState.riclass)) return false;
     if(!f) return true;
@@ -3853,8 +4266,91 @@ function renderGiornale(){
     return hay.includes(f);
   });
   list = list.slice().sort((a,b)=> new Date(a.data)-new Date(b.data)).reverse();
-  document.getElementById('giornaleList').innerHTML =
-    list.map(movimentoCardHTML).join('') || '<div class="empty">Nessun movimento trovato.</div>';
+  const container = document.getElementById('giornaleList');
+  container.innerHTML =
+    list.map(m=>movimentoCardHTML(m,'elenco')).join('') || '<div class="empty">Nessun movimento trovato.</div>';
+  bindMovimentoCardActions(container);
+  if(giornaleView === 'riclass') renderRiclassTotali();
+  if(giornaleView === 'scadenzario') renderScadenzario();
+}
+
+// ---------- Scadenzario crediti/debiti ----------
+// Elenca le righe di registrazioni attive, su conti classificati come crediti/debiti a
+// breve o lungo termine (Piano dei Conti), per cui in fase di registrazione è stata indicata
+// una data di scadenza. NON è una riconciliazione automatica fatture/incassi: mostra solo le
+// scadenze che hai scelto di datare tu stesso, e resta a te segnarle come saldate quando
+// incassi o paghi (finché non lo fai, restano nell'elenco anche se il conto è già cambiato
+// per via di altre registrazioni).
+function computeScadenzario(state){
+  const idx = buildPianoIndex(state.piano);
+  const items = [];
+  for(const m of activeMovimenti(state)){
+    m.righe.forEach((r, i)=>{
+      if(!r.dataScadenza || r.scadenzaSaldata) return;
+      const p = idx[String(r.codice)];
+      if(!p || !p.scadenza) return;
+      const isCredito = p.tipo && p.tipo.startsWith('Attivo');
+      const isDebito = p.tipo && p.tipo.startsWith('Passivo');
+      if(!isCredito && !isDebito) return;
+      const importo = Number(r.dare)||Number(r.avere)||0;
+      if(importo <= 0.005) return;
+      items.push({
+        movimentoId: m.id, rigaIdx: i,
+        tipo: isCredito ? 'credito' : 'debito',
+        importo, codice: r.codice, conto: p.conto,
+        desc: m.descrizione, dataScadenza: String(r.dataScadenza).slice(0,10),
+      });
+    });
+  }
+  const today = new Date().toISOString().slice(0,10);
+  for(const it of items) it.scaduta = it.dataScadenza < today;
+  items.sort((a,b)=> a.dataScadenza < b.dataScadenza ? -1 : a.dataScadenza > b.dataScadenza ? 1 : 0);
+  return items;
+}
+
+function segnaScadenzaSaldata(movimentoId, rigaIdx){
+  const m = STATE.movimenti.find(x=>x.id===movimentoId);
+  if(!m || !m.righe[rigaIdx]) return;
+  m.righe[rigaIdx].scadenzaSaldata = true;
+  m.righe[rigaIdx].scadenzaSaldataIl = new Date().toISOString();
+  saveState();
+  renderScadenzario();
+  renderHeader();
+}
+
+function renderScadenzario(){
+  const container = document.getElementById('scadenzarioBody');
+  const items = computeScadenzario(STATE);
+  const introBox = `<div class="note-box" style="background:var(--primary-soft);color:var(--primary);"><span>ℹ️</span><span>Scadenze indicate da te in fase di registrazione (solo per conti classificati come crediti/debiti nel Piano dei Conti). Non è una riconciliazione automatica: quando incassi o paghi, segna la scadenza come saldata per toglierla dall'elenco.</span></div>`;
+  if(items.length===0){
+    container.innerHTML = introBox + '<div class="empty">Nessuna scadenza aperta al momento.</div>';
+    return;
+  }
+  const crediti = items.filter(i=>i.tipo==='credito');
+  const debiti = items.filter(i=>i.tipo==='debito');
+  const sectionHTML = (title, list) => {
+    if(list.length===0) return '';
+    return `<h2 class="section-title" style="margin-top:18px;">${title}</h2><div class="scad-list">` +
+      list.map(it=>`
+        <div class="scad-item ${it.scaduta?'overdue':''}" data-mov="${it.movimentoId}" data-idx="${it.rigaIdx}">
+          <div class="scad-top">
+            <div><div class="scad-conto">${it.codice} — ${it.conto}</div><div class="scad-desc">${it.desc}</div></div>
+            <div class="scad-importo">${money(it.importo)}</div>
+          </div>
+          <div class="scad-meta">
+            <span class="scad-data ${it.scaduta?'overdue':''}">${it.scaduta?'⚠️ Scaduta il ':'Scade il '}${fmtDate(it.dataScadenza)}</span>
+            <button class="btn small" data-salda>✓ Segna come saldata</button>
+          </div>
+        </div>
+      `).join('') + `</div>`;
+  };
+  container.innerHTML = introBox + sectionHTML('Crediti in scadenza', crediti) + sectionHTML('Debiti in scadenza', debiti);
+  container.querySelectorAll('[data-salda]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const card = b.closest('.scad-item');
+      segnaScadenzaSaldata(card.dataset.mov, Number(card.dataset.idx));
+    });
+  });
 }
 document.getElementById('giornaleSearch').addEventListener('input', e=>{
   giornaleState.search = e.target.value;
@@ -3896,21 +4392,117 @@ function rebuildPianoCaches(){
   PIANO_LEAVES = STATE.piano.filter(p=>!p.sep && !p.header);
 }
 
+let classificaEdit = null; // {codice} while the inline editor is open
+
+function scadenzaLabel(s){
+  if(s==='breve') return 'Breve termine';
+  if(s==='lungo') return 'Lungo termine';
+  return 'Nessuna';
+}
+
+function classificaEditorHTML(it){
+  const riclassOpts = riclassDatalistHTML();
+  const showScadenza = it.tipo && (it.tipo.startsWith('Attivo') || it.tipo.startsWith('Passivo'));
+  return `<div class="classifica-editor" data-classifica="${it.codice}">
+    ${showScadenza ? `
+    <div class="field">
+      <label>Scadenza (per crediti/debiti)</label>
+      <select id="cScadenza">
+        <option value="" ${!it.scadenza?'selected':''}>Nessuna</option>
+        <option value="breve" ${it.scadenza==='breve'?'selected':''}>Breve termine (entro l'esercizio successivo)</option>
+        <option value="lungo" ${it.scadenza==='lungo'?'selected':''}>Lungo termine (oltre l'esercizio successivo)</option>
+      </select>
+      ${it.scadenzaAuto ? `<p class="panel-note" style="margin:6px 0 0;">🤖 Proposta automatica (non ancora confermata da te) — in base alla prassi civilistica standard per questo tipo di conto. Salva per confermarla, o cambiala se non è corretta per il tuo caso.${String(it.codice)==='23.01'?' In particolare i mutui andrebbero divisi tra quota a breve (rate in scadenza nei 12 mesi) e quota a lungo: qui è impostato tutto a lungo in mancanza del piano di ammortamento.':''}</p>` : ''}
+    </div>` : ''}
+    <div class="field">
+      <label>Riclassificazione di default</label>
+      <input type="text" id="cRiclass" list="classificaRiclassOptions" placeholder="es. Crediti operativi a breve termine" value="${(it.riclassDefault||'').replace(/"/g,'&quot;')}">
+      <datalist id="classificaRiclassOptions">${riclassOpts}</datalist>
+    </div>
+    <p class="panel-note" style="margin:0;">Questa etichetta si propone in automatico quando scegli questo conto in una nuova registrazione — resta comunque modificabile riga per riga (utile per conti "contenitore" come "Altri ricavi", che possono avere destinazioni diverse).</p>
+    <div class="form-actions">
+      <button class="btn primary" data-save-classifica="${it.codice}">Salva</button>
+      <button class="btn" data-cancel-classifica="1">Annulla</button>
+    </div>
+  </div>`;
+}
+
+// Euristica per segnalare i conti "contenitore" (nome generico tipo Altri/Diversi/Vari), che
+// possono ospitare operazioni di natura diversa e quindi avere bisogno di una riclassificazione
+// decisa caso per caso, riga per riga, invece di un'unica etichetta di default. È solo un
+// suggerimento visivo — non assegna nulla in automatico, la scelta della/e etichetta/e resta tua.
+function isContenitoreConto(nome){
+  const n = (nome||'').toLowerCase();
+  return /\baltr[oi]e?\b|\bdivers[eo]\b|\bvari[ae]?\b/.test(n);
+}
+
+function renderPianoBulkConfirm(){
+  const box = document.getElementById('pianoBulkConfirm');
+  const pending = PIANO_LEAVES.filter(it=>it.scadenzaAuto);
+  if(pending.length===0){ box.style.display='none'; box.innerHTML=''; return; }
+  box.style.display = '';
+  box.innerHTML = `<div class="note-box" style="background:var(--neutral-soft);color:var(--text-dim);margin-bottom:12px;flex-wrap:wrap;">
+    <span>🤖</span>
+    <span>${pending.length} cont${pending.length===1?'o ha':'i hanno'} ancora una classificazione breve/lungo termine proposta in automatico, da confermare o correggere (vedi i badge 🤖 qui sotto — in particolare i mutui/finanziamenti, che potrebbero andare divisi tra breve e lungo).</span>
+    <button type="button" class="btn small" id="btnConfermaTutteProposte" style="margin-top:8px;">✓ Conferma tutte come corrette</button>
+  </div>`;
+  document.getElementById('btnConfermaTutteProposte').addEventListener('click', ()=>{
+    if(!confirm(`Confermare tutte le ${pending.length} proposte automatiche così come sono?\n\nRivedile prima singolarmente se non sei sicuro — in particolare "Mutui e finanziamenti bancari", che qui è impostato tutto a lungo termine per prudenza ma andrebbe diviso se hai un piano di ammortamento.`)) return;
+    for(const it of pending) it.scadenzaAuto = false;
+    saveState();
+    renderAll();
+  });
+}
+
+// ---------- Ricerca tollerante nel Piano dei Conti ----------
+// Normalizza accenti/punteggiatura, spezza in parole e ignora l'ordine delle parole,
+// e tollera un piccolo errore di battitura (1 carattere) sulle parole più lunghe.
+function normalizzaRicerca(s){
+  return (s||'').toString().toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g,'') // via accenti
+    .replace(/[^\p{L}\p{N}\s]/gu,' ') // via punteggiatura
+    .replace(/\s+/g,' ').trim();
+}
+function distanzaBreve(a,b){
+  // Levenshtein semplice, va bene per stringhe corte come nomi di conti
+  if(Math.abs(a.length-b.length) > 1) return 2; // scorciatoia: sicuramente >1
+  const m=a.length, n=b.length;
+  const dp = Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]);
+  for(let j=0;j<=n;j++) dp[0][j]=j;
+  for(let i=1;i<=m;i++) for(let j=1;j<=n;j++){
+    dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1]);
+  }
+  return dp[m][n];
+}
+function pianoSearchMatch(query, codice, nome){
+  const nq = normalizzaRicerca(query);
+  if(!nq) return true;
+  const tokens = nq.split(' ').filter(Boolean);
+  const haystackWords = normalizzaRicerca(String(codice)+' '+nome).split(' ').filter(Boolean);
+  return tokens.every(t => haystackWords.some(w=>{
+    if(w.includes(t) || t.includes(w)) return true;
+    if(t.length>=4 && Math.abs(w.length-t.length)<=1) return distanzaBreve(t,w) <= 1;
+    return false;
+  }));
+}
+
 function renderPiano(filter=''){
   const saldi = computeSaldi(STATE);
-  const f = filter.trim().toLowerCase();
+  const f = filter.trim();
   const container = document.getElementById('pianoList');
+  renderPianoBulkConfirm();
   let html = '';
   let anyMatch = false;
   for(const g of PIANO_GROUPS){
     const items = g.items.filter(it=>{
       if(!f) return true;
-      return (String(it.codice)+' '+it.conto).toLowerCase().includes(f);
+      return pianoSearchMatch(f, it.codice, it.conto);
     });
     if(items.length===0) continue;
     anyMatch = true;
     const hasBalance = items.some(it=> (saldi[String(it.codice)]?.mag||0) > 0);
-    const openAttr = (f || hasBalance) ? 'open' : '';
+    const hasEditOpen = classificaEdit && items.some(it=>String(it.codice)===String(classificaEdit.codice));
+    const openAttr = (f || hasBalance || hasEditOpen) ? 'open' : '';
     html += `<details class="cat" ${openAttr}>
       <summary><span>${g.title}</span><span class="chev">▸</span></summary>
       <div class="cat-items">
@@ -3920,16 +4512,25 @@ function renderPiano(filter=''){
           const hasVal = s && s.mag > 0;
           const saldoTxt = s ? `${money(s.mag)} <span style="opacity:.6;font-weight:600;">${s.lato}</span>` : '—';
           const saldoCls = !hasVal ? 'zero' : '';
-          return `<div class="conto-row">
+          const isEditing = classificaEdit && String(classificaEdit.codice)===String(it.codice);
+          const badges = [
+            it.scadenza ? `<span class="scad-badge ${it.scadenza}">${it.scadenza==='breve'?'Breve':'Lungo'}${it.scadenzaAuto?' 🤖':''}</span>` : '',
+            it.riclassDefault ? `<span class="rdef-badge">🏷 ${it.riclassDefault}</span>` : '',
+            (!it.riclassDefault && isContenitoreConto(it.conto)) ? `<span class="rdef-badge" title="Nome generico: potrebbe contenere operazioni di natura diversa — valuta se serve una riclassificazione decisa caso per caso">📦 contenitore</span>` : '',
+          ].filter(Boolean).join(' ');
+          return `<div class="conto-row" style="${badges?'flex-wrap:wrap;':''}">
             <div class="conto-left">
               <span class="conto-name">${it.conto}</span>
               <span class="conto-code">${it.codice}</span>
+              ${badges ? `<span>${badges}</span>` : ''}
             </div>
             <div class="conto-right">
               <span class="pill ${cls}">${it.tipo||'—'}</span>
               <span class="saldo-val ${saldoCls}">${saldoTxt}</span>
+              <button type="button" class="conto-edit-btn" data-edit-conto="${it.codice}" title="Classifica conto">✎</button>
             </div>
-          </div>`;
+          </div>
+          ${isEditing ? classificaEditorHTML(it) : ''}`;
         }).join('')}
       </div>
     </details>`;
@@ -3938,8 +4539,51 @@ function renderPiano(filter=''){
 }
 document.getElementById('pianoSearch').addEventListener('input', e=>renderPiano(e.target.value));
 
+document.getElementById('pianoList').addEventListener('click', e=>{
+  const editBtn = e.target.closest('[data-edit-conto]');
+  if(editBtn){
+    const codice = editBtn.dataset.editConto;
+    classificaEdit = (classificaEdit && String(classificaEdit.codice)===String(codice)) ? null : {codice};
+    renderPiano(document.getElementById('pianoSearch').value||'');
+    return;
+  }
+  const cancelBtn = e.target.closest('[data-cancel-classifica]');
+  if(cancelBtn){
+    classificaEdit = null;
+    renderPiano(document.getElementById('pianoSearch').value||'');
+    return;
+  }
+  const saveBtn = e.target.closest('[data-save-classifica]');
+  if(saveBtn){
+    const codice = saveBtn.dataset.saveClassifica;
+    const entry = STATE.piano.find(p=>String(p.codice)===String(codice));
+    if(entry){
+      const sel = document.getElementById('cScadenza');
+      const riclassInput = document.getElementById('cRiclass');
+      entry.scadenza = sel ? (sel.value || null) : (entry.scadenza||null);
+      entry.scadenzaAuto = false;
+      entry.riclassDefault = riclassInput ? (riclassInput.value.trim() || null) : (entry.riclassDefault||null);
+      saveState();
+      rebuildPianoCaches();
+    }
+    classificaEdit = null;
+    renderPiano(document.getElementById('pianoSearch').value||'');
+    return;
+  }
+});
+
 // ---------- Bilancio ----------
-let bilState = {sub:'sp', year:0, showZero:false};
+function todayISO(){ return new Date().toISOString().slice(0,10); }
+function isoDate(y,m,d){ return `${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+function startOfQuarter(d){ const q = Math.floor(d.getMonth()/3); return new Date(d.getFullYear(), q*3, 1); }
+
+let bilState = {
+  sub:'sp', year:0, showZero:false,
+  mode:'excel',
+  periodStart: isoDate(new Date().getFullYear(),1,1),
+  periodEnd: todayISO(),
+  accrual: false,
+};
 const ANNI = ['2026','2027','2028'];
 
 document.getElementById('anniChips').innerHTML = ANNI.map((a,i)=>
@@ -3958,6 +4602,16 @@ document.getElementById('bilancioSubtabs').addEventListener('click', e=>{
   if(!btn) return;
   bilState.sub = btn.dataset.sub;
   document.querySelectorAll('#bilancioSubtabs button').forEach(b=>b.classList.toggle('active', b===btn));
+  renderBilancio();
+});
+
+document.getElementById('bilancioModeTabs').addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-mode]');
+  if(!btn) return;
+  bilState.mode = btn.dataset.mode;
+  document.querySelectorAll('#bilancioModeTabs button').forEach(b=>b.classList.toggle('active', b===btn));
+  document.getElementById('bilancioExcelControls').style.display = bilState.mode==='excel' ? '' : 'none';
+  document.getElementById('bilancioPeriodControls').style.display = bilState.mode==='periodo' ? '' : 'none';
   renderBilancio();
 });
 
@@ -3994,7 +4648,405 @@ function bilancioRowsHTML(rows, yearIdx){
   }).join('');
 }
 
+// ----- Bilancio a periodo: controlli -----
+function applyPreset(preset){
+  const now = new Date();
+  if(preset==='mese'){
+    bilState.periodStart = isoDate(now.getFullYear(), now.getMonth()+1, 1);
+    bilState.periodEnd = todayISO();
+  } else if(preset==='trimestre'){
+    const s = startOfQuarter(now);
+    bilState.periodStart = isoDate(s.getFullYear(), s.getMonth()+1, 1);
+    bilState.periodEnd = todayISO();
+  } else if(preset==='anno'){
+    bilState.periodStart = isoDate(now.getFullYear(),1,1);
+    bilState.periodEnd = todayISO();
+  } else if(preset==='sempre'){
+    const dates = activeMovimenti(STATE).map(m=>String(m.data).slice(0,10)).sort();
+    bilState.periodStart = dates.length ? dates[0] : isoDate(now.getFullYear(),1,1);
+    bilState.periodEnd = todayISO();
+  }
+  renderBilancio();
+}
+
+function renderPeriodControls(){
+  const c = document.getElementById('bilancioPeriodControls');
+  c.innerHTML = `
+    <div class="period-panel">
+      <div class="period-presets">
+        <button type="button" data-preset="mese">Questo mese</button>
+        <button type="button" data-preset="trimestre">Questo trimestre</button>
+        <button type="button" data-preset="anno">Quest'anno</button>
+        <button type="button" data-preset="sempre">Da sempre</button>
+      </div>
+      <div class="period-dates">
+        <div class="field"><label>Da</label><input type="date" id="periodStart" value="${bilState.periodStart}"></div>
+        <div class="field"><label>A</label><input type="date" id="periodEnd" value="${bilState.periodEnd}"></div>
+      </div>
+      <div class="accrual-row">
+        <div class="switch ${bilState.accrual?'on':''}" id="accrualSwitch"></div>
+        <div class="accrual-text">
+          <b>Ripartizione pro-quota delle operazioni pluriennali</b><br>
+          Disattivata: ogni registrazione pesa per intero nel Conto Economico alla sua data effettiva — più semplice, ma un abbonamento pluriennale registrato oggi pesa tutto oggi.<br>
+          Attivata: le operazioni marcate come pluriennali (abbonamenti, assicurazioni…) vengono spalmate in automatico sui giorni di competenza che ricadono nel periodo scelto. Lo Stato Patrimoniale mostra comunque sempre i saldi realmente registrati: questa modalità non genera da sola scritture di rateo/risconto.
+        </div>
+      </div>
+    </div>
+  `;
+  document.querySelectorAll('#bilancioPeriodControls [data-preset]').forEach(b=>{
+    b.addEventListener('click', ()=> applyPreset(b.dataset.preset));
+  });
+  document.getElementById('periodStart').addEventListener('change', e=>{ bilState.periodStart = e.target.value; renderBilancio(); });
+  document.getElementById('periodEnd').addEventListener('change', e=>{ bilState.periodEnd = e.target.value; renderBilancio(); });
+  document.getElementById('accrualSwitch').addEventListener('click', ()=>{
+    bilState.accrual = !bilState.accrual;
+    renderBilancio();
+  });
+}
+
+// ----- Bilancio a periodo: motore di calcolo -----
+function accrualFraction(compDal, compAl, start, end){
+  if(!compDal || !compAl) return 0;
+  const compStart = new Date(compDal).getTime();
+  const compEnd = new Date(compAl).getTime();
+  const s = new Date(start).getTime();
+  const e = new Date(end).getTime();
+  const total = compEnd - compStart;
+  if(total <= 0) return 0;
+  const overlapStart = Math.max(compStart, s);
+  const overlapEnd = Math.min(compEnd, e);
+  const overlap = overlapEnd - overlapStart;
+  if(overlap <= 0) return 0;
+  return overlap / total;
+}
+
+function computeCEPeriodo(state, start, end, accrual){
+  const idx = buildPianoIndex(state.piano);
+  const acc = {};
+  for(const m of activeMovimenti(state)){
+    const pluri = isPluriennale(m);
+    for(const r of m.righe){
+      const p = idx[String(r.codice)];
+      const tipo = p ? p.tipo : '';
+      if(!(tipo==='Conto economico' || tipo==='Conto economico rettificativo')) continue;
+      let dare = Number(r.dare)||0, avere = Number(r.avere)||0;
+      if(accrual && pluri){
+        const frac = accrualFraction(m.competenzaDal, m.competenzaAl, start, end);
+        if(frac<=0) continue;
+        dare *= frac; avere *= frac;
+      } else {
+        const dDate = String(m.data).slice(0,10);
+        if(!(dDate >= start && dDate <= end)) continue;
+      }
+      const code = String(r.codice);
+      if(!acc[code]) acc[code] = {dare:0, avere:0};
+      acc[code].dare += dare; acc[code].avere += avere;
+    }
+  }
+  return acc;
+}
+
+function computeSPAsOf(state, asOf){
+  const idx = buildPianoIndex(state.piano);
+  const acc = {};
+  for(const m of activeMovimenti(state)){
+    const dDate = String(m.data).slice(0,10);
+    if(dDate > asOf) continue;
+    for(const r of m.righe){
+      const p = idx[String(r.codice)];
+      const tipo = p ? p.tipo : '';
+      if(!(tipo && (tipo.startsWith('Attivo') || tipo.startsWith('Passivo')))) continue;
+      const code = String(r.codice);
+      if(!acc[code]) acc[code] = {dare:0, avere:0};
+      acc[code].dare += Number(r.dare)||0;
+      acc[code].avere += Number(r.avere)||0;
+    }
+  }
+  return acc;
+}
+
+function scadenzaTotals(acc, idx){
+  let creditiBreve=0, creditiLungo=0, creditiNC=0, debitiBreve=0, debitiLungo=0, debitiNC=0;
+  for(const code in acc){
+    const p = idx[code]; if(!p) continue;
+    const raw = (acc[code].dare||0) - (acc[code].avere||0);
+    if(p.tipo === 'Attivo'){
+      if(raw<=0.005) continue;
+      if(p.scadenza==='lungo') creditiLungo+=raw;
+      else if(p.scadenza==='breve') creditiBreve+=raw;
+      else creditiNC+=raw;
+    } else if(p.tipo === 'Passivo'){
+      const v = -raw;
+      if(v<=0.005) continue;
+      if(p.scadenza==='lungo') debitiLungo+=v;
+      else if(p.scadenza==='breve') debitiBreve+=v;
+      else debitiNC+=v;
+    }
+  }
+  return {creditiBreve,creditiLungo,creditiNC,debitiBreve,debitiLungo,debitiNC};
+}
+
+function computeRateiRisconti(state, asOf){
+  const idx = buildPianoIndex(state.piano);
+  let ratAttivi=0, riscAttivi=0, ratPassivi=0, riscPassivi=0;
+  const dettaglio = [];
+  for(const m of activeMovimenti(state)){
+    if(!isPluriennale(m)) continue;
+    const registrato = String(m.data).slice(0,10) <= asOf;
+    const fracMaturata = accrualFraction(m.competenzaDal, m.competenzaAl, m.competenzaDal, asOf);
+    for(const r of m.righe){
+      const p = idx[String(r.codice)];
+      const tipo = p ? p.tipo : '';
+      if(!(tipo==='Conto economico' || tipo==='Conto economico rettificativo')) continue;
+      const dare = Number(r.dare)||0, avere = Number(r.avere)||0;
+      if(dare>0){
+        const reg = registrato ? dare : 0;
+        const mat = dare * fracMaturata;
+        const diff = reg - mat;
+        if(diff > 0.005){ riscAttivi += diff; dettaglio.push({tipo:'Risconto attivo', importo:diff, desc:m.descrizione, conto: p?p.conto:r.codice, codice:String(r.codice), movimentoId:m.id}); }
+        else if(diff < -0.005){ ratPassivi += -diff; dettaglio.push({tipo:'Rateo passivo', importo:-diff, desc:m.descrizione, conto: p?p.conto:r.codice, codice:String(r.codice), movimentoId:m.id}); }
+      }
+      if(avere>0){
+        const reg = registrato ? avere : 0;
+        const mat = avere * fracMaturata;
+        const diff = reg - mat;
+        if(diff > 0.005){ riscPassivi += diff; dettaglio.push({tipo:'Risconto passivo', importo:diff, desc:m.descrizione, conto: p?p.conto:r.codice, codice:String(r.codice), movimentoId:m.id}); }
+        else if(diff < -0.005){ ratAttivi += -diff; dettaglio.push({tipo:'Rateo attivo', importo:-diff, desc:m.descrizione, conto: p?p.conto:r.codice, codice:String(r.codice), movimentoId:m.id}); }
+      }
+    }
+  }
+  return {ratAttivi, riscAttivi, ratPassivi, riscPassivi, dettaglio};
+}
+
+// ---------- Generazione scritture di rettifica (ratei/risconti) ----------
+// Mappa ogni riga stimata da computeRateiRisconti sulla scrittura in partita doppia
+// corrispondente, secondo l'OIC 18: un risconto "toglie" l'eccedenza dal conto economico
+// originale spostandola sul relativo conto patrimoniale; un rateo la aggiunge.
+const RETT_CONTI = {conti16:'16.01', risc16:'16.02', rat28:'28.01', risc28:'28.02'};
+function rettificaEntryFor(item){
+  switch(item.tipo){
+    case 'Risconto attivo': return {dareCodice:'16.02', avereCodice:item.codice}; // sposta il costo non di competenza fuori dal periodo
+    case 'Rateo passivo':   return {dareCodice:item.codice, avereCodice:'28.01'}; // riconosce il costo di competenza non ancora registrato
+    case 'Risconto passivo':return {dareCodice:item.codice, avereCodice:'28.02'}; // rinvia il ricavo non di competenza
+    case 'Rateo attivo':    return {dareCodice:'16.01', avereCodice:item.codice}; // riconosce il ricavo di competenza non ancora registrato
+    default: return null;
+  }
+}
+function rettificaKey(item, asOf){
+  return [item.movimentoId, item.codice, item.tipo, asOf].join('|');
+}
+function rettificaGiaGenerata(item, asOf){
+  const key = rettificaKey(item, asOf);
+  return STATE.movimenti.some(m => m.rettificaOrigine === key);
+}
+function rettGenCount(dettaglio, asOf){
+  return dettaglio.filter(it => rettificaGiaGenerata(it, asOf)).length;
+}
+
+let rettificaReviewState = null; // {items:[{item, checked}], asOf}
+
+function apriRettificaReview(rr, asOf){
+  const pending = rr.dettaglio.filter(it => !rettificaGiaGenerata(it, asOf));
+  const giaFatte = rr.dettaglio.length - pending.length;
+  rettificaReviewState = {
+    items: pending.map(it => ({item: it, checked: true})),
+    asOf, giaFatte,
+  };
+  document.getElementById('rettificaReviewPanel').style.display = 'block';
+  renderRettificaReview();
+  document.getElementById('rettificaReviewPanel').scrollIntoView({behavior:'smooth', block:'start'});
+}
+function chiudiRettificaReview(){
+  rettificaReviewState = null;
+  const panel = document.getElementById('rettificaReviewPanel');
+  panel.style.display = 'none';
+  panel.innerHTML = '';
+}
+function renderRettificaReview(){
+  const panel = document.getElementById('rettificaReviewPanel');
+  const st = rettificaReviewState;
+  if(!st){ panel.style.display='none'; panel.innerHTML=''; return; }
+  const nSel = st.items.filter(x=>x.checked).length;
+  panel.innerHTML = `
+    <div class="form-panel-head">
+      <h3>Genera scritture di rettifica</h3>
+      <button type="button" class="form-close" id="btnChiudiRettificaX" title="Chiudi">✕</button>
+    </div>
+    <div class="note-box" style="background:var(--neutral-soft);color:var(--text-dim);">
+      <span>ℹ️</span><span>Ogni riga qui sotto diventa una registrazione vera nel libro giornale, datata ${fmtDate(st.asOf)}. Restano comunque modificabili o archiviabili in seguito come tutte le altre.${st.giaFatte>0?` (${st.giaFatte} già generate in precedenza per questo stesso periodo non sono più proposte qui.)`:''}</span>
+    </div>
+    ${st.items.length===0 ? '<div class="empty">Nessuna nuova scrittura da generare: sono già state tutte create per questo periodo.</div>' : st.items.map((x,i)=>{
+      const it = x.item;
+      const e = rettificaEntryFor(it);
+      const dareNome = PIANO_INDEX[e.dareCodice] ? PIANO_INDEX[e.dareCodice].conto : e.dareCodice;
+      const avereNome = PIANO_INDEX[e.avereCodice] ? PIANO_INDEX[e.avereCodice].conto : e.avereCodice;
+      return `<div class="riga-editor-row" style="cursor:pointer;" data-idx="${i}">
+        <div class="rr-top">
+          <label style="display:flex;align-items:center;gap:8px;flex:1;min-width:0;">
+            <input type="checkbox" data-rett-check="${i}" ${x.checked?'checked':''} style="width:18px;height:18px;flex:0 0 auto;">
+            <span style="font-weight:700;font-size:13.5px;">${it.tipo} — ${money(it.importo)}</span>
+          </label>
+        </div>
+        <div class="panel-note" style="margin:4px 0 0;">${it.desc} (conto ${it.conto})</div>
+        <div class="panel-note" style="margin:2px 0 0;">Dare: ${e.dareCodice} — ${dareNome} · Avere: ${e.avereCodice} — ${avereNome}</div>
+      </div>`;
+    }).join('')}
+    <div class="form-actions">
+      <button class="btn primary" id="btnConfermaRettifiche" ${nSel===0?'disabled':''}>Genera ${nSel} scrittur${nSel===1?'a':'e'}</button>
+      <button class="btn" id="btnAnnullaRettifiche">Annulla</button>
+    </div>
+  `;
+  panel.querySelectorAll('[data-rett-check]').forEach(cb=>{
+    cb.addEventListener('change', e=>{
+      st.items[Number(e.target.dataset.rettCheck)].checked = e.target.checked;
+      renderRettificaReview();
+    });
+  });
+  document.getElementById('btnChiudiRettificaX').addEventListener('click', chiudiRettificaReview);
+  document.getElementById('btnAnnullaRettifiche').addEventListener('click', chiudiRettificaReview);
+  const confirmBtn = document.getElementById('btnConfermaRettifiche');
+  if(confirmBtn) confirmBtn.addEventListener('click', confermaGeneraRettifiche);
+}
+function confermaGeneraRettifiche(){
+  const st = rettificaReviewState;
+  if(!st) return;
+  const selected = st.items.filter(x=>x.checked);
+  if(selected.length===0) return;
+  if(!confirm(`Generare ${selected.length} scrittur${selected.length===1?'a':'e'} di rettifica datat${selected.length===1?'a':'e'} ${fmtDate(st.asOf)}?\n\nSaranno registrazioni vere nel libro giornale (modificabili o archiviabili in seguito come tutte le altre).`)) return;
+  let nextN = STATE.movimenti.length;
+  for(const x of selected){
+    const it = x.item;
+    const e = rettificaEntryFor(it);
+    nextN++;
+    const id = 'm' + nextN + '_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2,6);
+    STATE.movimenti.push({
+      id,
+      data: st.asOf,
+      descrizione: `Rettifica di competenza (${it.tipo}) — ${it.desc}`,
+      competenzaDal: null, competenzaAl: null,
+      righe: [
+        {codice: e.dareCodice, dare: it.importo, avere: 0, riclass: null},
+        {codice: e.avereCodice, dare: 0, avere: it.importo, riclass: null},
+      ],
+      rettificaOrigine: rettificaKey(it, st.asOf),
+    });
+  }
+  saveState();
+  chiudiRettificaReview();
+  renderAll();
+}
+
+function periodoGroupRowsHTML(acc, idx, tipoFilter){
+  let html = '';
+  let any = false;
+  for(const g of PIANO_GROUPS){
+    const rows = g.items.filter(it=>{
+      const p = idx[String(it.codice)];
+      if(!p || !tipoFilter(p.tipo)) return false;
+      const a = acc[String(it.codice)];
+      const mag = a ? Math.abs((a.dare||0)-(a.avere||0)) : 0;
+      return mag > 0.005;
+    });
+    if(rows.length===0) continue;
+    any = true;
+    html += `<p class="panel-title" style="margin-top:14px;font-size:12.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.03em;">${g.title}</p>`;
+    html += rows.map(it=>{
+      const a = acc[String(it.codice)];
+      const raw = (a.dare||0)-(a.avere||0);
+      const mag = Math.abs(raw);
+      const lato = raw>=0 ? 'Dare' : 'Avere';
+      return `<div class="conto-row"><div class="conto-left"><span class="conto-name">${it.conto}</span><span class="conto-code">${it.codice}</span></div><div class="conto-right"><span class="saldo-val">${money(mag)} <span style="opacity:.6;font-weight:600;">${lato}</span></span></div></div>`;
+    }).join('');
+  }
+  return any ? html : '<div class="empty">Nessun movimento in questo periodo.</div>';
+}
+
+function renderBilancioPeriodo(){
+  renderPeriodControls();
+  const body = document.getElementById('bilancioBody');
+  const noteBox = document.getElementById('bilancioNote');
+  const idx = PIANO_INDEX;
+  const {periodStart, periodEnd, accrual} = bilState;
+
+  if(bilState.sub === 'sp'){
+    noteBox.style.display = 'flex';
+    noteBox.innerHTML = `<span>ℹ️</span><span>Stato Patrimoniale calcolato dai movimenti registrati: la "foto" dei saldi al <b>${fmtDate(periodEnd)}</b> (somma di tutte le registrazioni da inizio attività fino a questa data).</span>`;
+    const acc = computeSPAsOf(STATE, periodEnd);
+    const st = scadenzaTotals(acc, idx);
+    const hasScad = (st.creditiBreve+st.creditiLungo+st.creditiNC+st.debitiBreve+st.debitiLungo+st.debitiNC) > 0.005;
+    const rr = accrual ? computeRateiRisconti(STATE, periodEnd) : null;
+    const hasRR = rr && (rr.ratAttivi+rr.riscAttivi+rr.ratPassivi+rr.riscPassivi) > 0.005;
+    body.innerHTML = `
+      ${hasScad ? `
+      <div class="panel">
+        <p class="panel-title">Crediti e debiti per scadenza</p>
+        <div class="summary-mini">
+          <div class="mini-card"><div class="mini-label">Crediti a breve</div><div class="mini-value">${money(st.creditiBreve)}</div></div>
+          <div class="mini-card"><div class="mini-label">Crediti a lungo</div><div class="mini-value">${money(st.creditiLungo)}</div></div>
+          <div class="mini-card"><div class="mini-label">Debiti a breve</div><div class="mini-value">${money(st.debitiBreve)}</div></div>
+          <div class="mini-card"><div class="mini-label">Debiti a lungo</div><div class="mini-value">${money(st.debitiLungo)}</div></div>
+        </div>
+        ${(st.creditiNC>0.005||st.debitiNC>0.005) ? `<p class="panel-note">Non ancora classificati: crediti ${money(st.creditiNC)}, debiti ${money(st.debitiNC)}. Imposta breve/lungo termine dal Piano dei Conti (✎ su ogni conto).</p>` : ''}
+      </div>` : `<div class="note-box" style="background:var(--neutral-soft);color:var(--text-dim);"><span>🏷</span><span>Nessun conto è ancora classificato come breve/lungo termine. Vai nel Piano dei Conti e usa ✎ sui conti di crediti/debiti per abilitare questo riepilogo.</span></div>`}
+      ${hasRR ? `
+      <div class="panel">
+        <p class="panel-title">Ratei e risconti stimati <span class="computed-mark" title="Calcolati qui dalle operazioni pluriennali in base ai giorni di competenza — non sono scritture registrate nel libro giornale">Σ stima</span></p>
+        <p class="panel-note">Secondo OIC 18, confluiscono nella voce D) dell'Attivo e nella voce E) del Passivo dello Stato Patrimoniale. Qui sono divisi per tipo per chiarezza; a bilancio formale vanno sommati insieme, rispettivamente in Attivo e Passivo.</p>
+        <div class="summary-mini">
+          <div class="mini-card"><div class="mini-label">Ratei attivi (Attivo D)</div><div class="mini-value">${money(rr.ratAttivi)}</div></div>
+          <div class="mini-card"><div class="mini-label">Risconti attivi (Attivo D)</div><div class="mini-value">${money(rr.riscAttivi)}</div></div>
+          <div class="mini-card"><div class="mini-label">Ratei passivi (Passivo E)</div><div class="mini-value">${money(rr.ratPassivi)}</div></div>
+          <div class="mini-card"><div class="mini-label">Risconti passivi (Passivo E)</div><div class="mini-value">${money(rr.riscPassivi)}</div></div>
+        </div>
+        <p class="panel-note">Sono una stima per capire l'effetto delle pluriennali sul periodo scelto, ricalcolata ogni volta dalle operazioni pluriennali stesse — resta visibile anche dopo aver generato le scritture reali qui sotto, che invece contano davvero nei saldi (voci 16.xx e 28.xx nell'Attivo/Passivo).</p>
+        ${rettGenCount(rr.dettaglio, periodEnd) > 0 ? `<p class="panel-note">✓ ${rettGenCount(rr.dettaglio, periodEnd)} di ${rr.dettaglio.length} già trasformate in scritture reali per questa data.</p>` : ''}
+        <button type="button" class="btn small" id="btnGeneraRettifiche" style="margin-top:6px;">⚖️ Genera scritture di rettifica…</button>
+      </div>` : ''}
+      <div class="panel">
+        <p class="panel-title">Attivo</p>
+        ${periodoGroupRowsHTML(acc, idx, t=>t && t.startsWith('Attivo'))}
+      </div>
+      <div class="panel">
+        <p class="panel-title">Passivo</p>
+        ${periodoGroupRowsHTML(acc, idx, t=>t && t.startsWith('Passivo'))}
+      </div>
+    `;
+    const genBtn = document.getElementById('btnGeneraRettifiche');
+    if(genBtn) genBtn.addEventListener('click', ()=> apriRettificaReview(rr, periodEnd));
+  } else {
+    noteBox.style.display = 'flex';
+    noteBox.innerHTML = accrual
+      ? `<span>ℹ️</span><span>Conto Economico dal <b>${fmtDate(periodStart)}</b> al <b>${fmtDate(periodEnd)}</b>, con ripartizione pro-quota delle operazioni pluriennali sul periodo scelto.</span>`
+      : `<span>ℹ️</span><span>Conto Economico dal <b>${fmtDate(periodStart)}</b> al <b>${fmtDate(periodEnd)}</b>, per data di registrazione (nessuna ripartizione delle pluriennali).</span>`;
+    const acc = computeCEPeriodo(STATE, periodStart, periodEnd, accrual);
+    let ricavi=0, costi=0;
+    for(const code in acc){
+      const raw = (acc[code].dare||0)-(acc[code].avere||0);
+      const val = -raw;
+      if(val>=0) ricavi += val; else costi += -val;
+    }
+    const utile = ricavi - costi;
+    body.innerHTML = `
+      <div class="panel">
+        <div class="summary-mini">
+          <div class="mini-card"><div class="mini-label">Ricavi periodo</div><div class="mini-value">${money(ricavi)}</div></div>
+          <div class="mini-card"><div class="mini-label">Costi periodo</div><div class="mini-value">${money(costi)}</div></div>
+        </div>
+        <div class="bilancio-row total"><span class="lbl">${utile>=0?'Utile del periodo':'Perdita del periodo'}</span><span class="val">${money(Math.abs(utile))}</span></div>
+      </div>
+      <div class="panel">
+        <p class="panel-title">Dettaglio conti</p>
+        ${periodoGroupRowsHTML(acc, idx, t=>t==='Conto economico' || t==='Conto economico rettificativo')}
+      </div>
+    `;
+  }
+}
+
 function renderBilancio(){
+  if(bilState.mode === 'periodo'){
+    renderBilancioPeriodo();
+    return;
+  }
   const yearIdx = bilState.year;
   const body = document.getElementById('bilancioBody');
   const noteBox = document.getElementById('bilancioNote');
@@ -4002,7 +5054,7 @@ function renderBilancio(){
   const bf = STATE.bilancioFormale;
   if(bilState.sub === 'sp'){
     noteBox.style.display = 'flex';
-    noteBox.innerHTML = `<span>⚠️</span><span><b>Fotografia statica dal file Excel:</b> questa sezione non si aggiorna da sola quando aggiungi nuove registrazioni dalla pagina. Per i dati sempre aggiornati usa Riepilogo e Piano dei Conti. Nel file originale, inoltre, il Patrimonio Netto non rifletteva ancora l'utile del periodo: da verificare/aggiornare a mano se serve un bilancio formale corretto.</span>`;
+    noteBox.innerHTML = `<span>⚠️</span><span><b>Fotografia statica dal file Excel:</b> questa sezione non si aggiorna da sola quando aggiungi nuove registrazioni dalla pagina. Per i dati sempre aggiornati usa "Calcolato dai movimenti" qui sopra. Nel file originale, inoltre, il Patrimonio Netto non rifletteva ancora l'utile del periodo: da verificare/aggiornare a mano se serve un bilancio formale corretto.</span>`;
     body.innerHTML = `
       <div class="panel">
         <p class="panel-title">Attivo</p>
@@ -4015,7 +5067,7 @@ function renderBilancio(){
     `;
   } else {
     noteBox.style.display = 'flex';
-    noteBox.innerHTML = `<span>ℹ️</span><span>Fotografia statica dal file Excel originale (non si aggiorna da sola). Per i ricavi/costi in tempo reale usa il Riepilogo.</span>`;
+    noteBox.innerHTML = `<span>ℹ️</span><span>Fotografia statica dal file Excel originale (non si aggiorna da sola). Per i ricavi/costi aggiornati usa "Calcolato dai movimenti" qui sopra.</span>`;
     body.innerHTML = `
       <div class="panel">
         <p class="panel-title">Conto Economico</p>
@@ -4045,7 +5097,7 @@ function riclassDatalistHTML(){
 }
 
 function addFormRiga(prefill){
-  formRighe.push(Object.assign({codice:'', dare:'', avere:'', riclass:'', phDare:'', phAvere:''}, prefill||{}));
+  formRighe.push(Object.assign({codice:'', dare:'', avere:'', riclass:'', dataScadenza:'', phDare:'', phAvere:''}, prefill||{}));
   renderForm();
 }
 function removeFormRiga(idx){
@@ -4059,18 +5111,37 @@ function formTotals(){
   return {dare, avere};
 }
 
+// Un conto ha una data di scadenza selezionabile in riga solo se è stato classificato come
+// credito/debito a breve o lungo termine dal Piano dei Conti (etichetta ✎ sul conto).
+function rigaHasScadenza(codice){
+  const p = PIANO_INDEX[String(codice)];
+  return !!(p && p.scadenza);
+}
+
+// Avviso non bloccante: la data scelta cade fuori dagli anni gestiti in questa pagina (array
+// ANNI, usata anche per la fotografia di bilancio). Non impedisce il salvataggio: serve solo
+// a far notare un possibile errore di battitura (es. anno sbagliato).
+function dataFuoriEsercizioHTML(dateStr){
+  if(!dateStr) return '';
+  const y = dateStr.slice(0,4);
+  if(ANNI.indexOf(y) !== -1) return '';
+  return `<div class="note-box"><span>⚠️</span><span>Questa data (${fmtDate(dateStr)}) è fuori dagli esercizi gestiti in questa pagina (${ANNI[0]}–${ANNI[ANNI.length-1]}). Puoi comunque salvare: controlla solo che non sia un errore di battitura.</span></div>`;
+}
+
 function renderForm(){
   const panel = document.getElementById('formPanel');
   const t = formTotals();
   const ok = formRighe.length>=2 && Math.abs(t.dare-t.avere) < 0.005 && t.dare>0;
   panel.innerHTML = `
     <div class="form-panel-head">
-      <h3>Nuova registrazione</h3>
+      <h3>${movimentoEditId ? 'Modifica registrazione' : 'Nuova registrazione'}</h3>
       <button type="button" class="form-close" id="btnChiudiFormX" title="Chiudi">✕</button>
     </div>
+    ${movimentoEditId ? `<div class="note-box" style="background:var(--neutral-soft);color:var(--text-dim);margin-bottom:10px;"><span>✎</span><span>Stai correggendo una registrazione già salvata. Per legge (art. 2219 c.c.) la correzione resta comunque tracciata: la registrazione mantiene lo stesso identificativo e la data dell'ultima modifica.</span></div>` : ''}
     <div class="field-row">
       <div class="field"><label>Data</label><input type="date" id="fData" value="${formDate}"></div>
     </div>
+    <div id="dataFuoriEsercizioNote">${dataFuoriEsercizioHTML(formDate)}</div>
     <div class="field"><label>Descrizione</label><input type="text" id="fDesc" placeholder="${(formDescPlaceholder||'es. Vendita a cliente Rossi').replace(/"/g,'&quot;')}" value="${formDesc.replace(/"/g,'&quot;')}"></div>
     <div class="competenza-toggle" id="competenzaToggle">
       <div class="switch ${formPluriennale?'on':''}" id="pluriSwitch"></div>
@@ -4094,6 +5165,10 @@ function renderForm(){
             <input type="number" step="0.01" min="0" class="rrAvere" placeholder="${r.phAvere ? ('es. '+r.phAvere+' €') : 'Avere €'}" value="${r.avere}">
           </div>
           <input type="text" class="rrRiclass" list="riclassOptions" placeholder="Etichetta / riclassificazione (opzionale)" value="${(r.riclass||'').replace(/"/g,'&quot;')}">
+          <div class="rr-scadenza-field field" style="margin:8px 0 0;display:${rigaHasScadenza(r.codice)?'block':'none'};">
+            <label>Data di scadenza (facoltativa — solo crediti/debiti)</label>
+            <input type="date" class="rrScadenza" value="${r.dataScadenza||''}">
+          </div>
         </div>
       `).join('')}
       <datalist id="riclassOptions">${riclassDatalistHTML()}</datalist>
@@ -4106,14 +5181,30 @@ function renderForm(){
     </div>
 
     <div class="form-actions">
-      <button class="btn primary" id="btnSalvaMovimento" ${ok?'':'disabled'}>Salva registrazione</button>
+      <button class="btn primary" id="btnSalvaMovimento" ${ok?'':'disabled'}>${movimentoEditId ? 'Salva modifiche' : 'Salva registrazione'}</button>
       <button class="btn" id="btnAnnullaMovimento">Annulla</button>
     </div>
   `;
 
   panel.querySelectorAll('.riga-editor-row').forEach(row=>{
     const idx = Number(row.dataset.idx);
-    row.querySelector('.rrConto').addEventListener('change', e=>{ formRighe[idx].codice = e.target.value; });
+    row.querySelector('.rrConto').addEventListener('change', e=>{
+      formRighe[idx].codice = e.target.value;
+      const p = PIANO_INDEX[String(e.target.value)];
+      if(p && p.riclassDefault && !formRighe[idx].riclass){
+        formRighe[idx].riclass = p.riclassDefault;
+        const riclassField = row.querySelector('.rrRiclass');
+        if(riclassField) riclassField.value = p.riclassDefault;
+      }
+      const showScad = !!(p && p.scadenza);
+      const scadField = row.querySelector('.rr-scadenza-field');
+      const scadInput = row.querySelector('.rrScadenza');
+      if(scadField) scadField.style.display = showScad ? 'block' : 'none';
+      if(!showScad){
+        formRighe[idx].dataScadenza = '';
+        if(scadInput) scadInput.value = '';
+      }
+    });
     row.querySelector('.rrDare').addEventListener('input', e=>{
       formRighe[idx].dare = e.target.value;
       if(e.target.value !== '' && Number(e.target.value) !== 0){
@@ -4131,12 +5222,18 @@ function renderForm(){
       updateQuadraturaDisplay();
     });
     row.querySelector('.rrRiclass').addEventListener('input', e=>{ formRighe[idx].riclass = e.target.value; });
+    const scadInput = row.querySelector('.rrScadenza');
+    if(scadInput) scadInput.addEventListener('input', e=>{ formRighe[idx].dataScadenza = e.target.value; });
   });
   panel.querySelectorAll('[data-remove]').forEach(b=>{
     b.addEventListener('click', ()=> removeFormRiga(Number(b.dataset.remove)));
   });
   document.getElementById('btnAddRiga').addEventListener('click', ()=> addFormRiga());
-  document.getElementById('fData').addEventListener('input', e=> formDate = e.target.value);
+  document.getElementById('fData').addEventListener('input', e=>{
+    formDate = e.target.value;
+    const note = document.getElementById('dataFuoriEsercizioNote');
+    if(note) note.innerHTML = dataFuoriEsercizioHTML(formDate);
+  });
   document.getElementById('fDesc').addEventListener('input', e=> formDesc = e.target.value);
   document.getElementById('pluriSwitch').addEventListener('click', ()=>{ formPluriennale = !formPluriennale; renderForm(); });
   if(formPluriennale){
@@ -4161,30 +5258,60 @@ function updateQuadraturaDisplay(){
 }
 
 let formDate='', formDesc='', formPluriennale=false, formCompDal='', formCompAl='', formDescPlaceholder='es. Vendita a cliente Rossi';
+let movimentoEditId = null; // id del movimento in modifica, null = nuova registrazione
 
 function apriForm(template){
   chiudiModelloEditor();
+  movimentoEditId = null;
   const today = new Date().toISOString().slice(0,10);
   formDate = today; formDesc=''; formCompDal=''; formCompAl='';
   if(template){
     formDescPlaceholder = template.descrizione || 'es. Vendita a cliente Rossi';
     formPluriennale = !!template.pluriennale;
     formRighe = template.righe.map(tr => ({
-      codice: tr.codice, dare:'', avere:'', riclass: tr.riclass || '',
+      codice: tr.codice, dare:'', avere:'', riclass: tr.riclass || '', dataScadenza:'',
       phDare: tr.lato==='dare' ? tr.esempio : '',
       phAvere: tr.lato==='avere' ? tr.esempio : '',
     }));
   } else {
     formDescPlaceholder = 'es. Vendita a cliente Rossi';
     formPluriennale = false;
-    formRighe = [{codice:'',dare:'',avere:'',riclass:'',phDare:'',phAvere:''},{codice:'',dare:'',avere:'',riclass:'',phDare:'',phAvere:''}];
+    formRighe = [{codice:'',dare:'',avere:'',riclass:'',dataScadenza:'',phDare:'',phAvere:''},{codice:'',dare:'',avere:'',riclass:'',dataScadenza:'',phDare:'',phAvere:''}];
   }
   document.getElementById('formPanel').style.display = 'block';
   renderForm();
   goToTab('giornale');
   document.getElementById('formPanel').scrollIntoView({behavior:'smooth', block:'start'});
 }
+
+// Apre la stessa form di registrazione precompilata con i dati di un movimento esistente.
+// Il salvataggio aggiorna il movimento in modifica diretta (stesso id), come scelto — senza
+// passare da una scrittura di storno — ma tiene una data di ultima modifica come traccia minima.
+function apriFormModifica(m){
+  chiudiModelloEditor();
+  movimentoEditId = m.id;
+  formDate = String(m.data).slice(0,10);
+  formDesc = m.descrizione || '';
+  formPluriennale = isPluriennale(m);
+  formCompDal = m.competenzaDal ? String(m.competenzaDal).slice(0,10) : '';
+  formCompAl = m.competenzaAl ? String(m.competenzaAl).slice(0,10) : '';
+  formDescPlaceholder = 'es. Vendita a cliente Rossi';
+  formRighe = m.righe.map(r => ({
+    codice: r.codice,
+    dare: r.dare ? String(r.dare) : '',
+    avere: r.avere ? String(r.avere) : '',
+    riclass: r.riclass || '',
+    dataScadenza: r.dataScadenza ? String(r.dataScadenza).slice(0,10) : '',
+    phDare: '', phAvere: '',
+  }));
+  document.getElementById('formPanel').style.display = 'block';
+  renderForm();
+  goToTab('giornale');
+  document.getElementById('formPanel').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
 function chiudiForm(){
+  movimentoEditId = null;
   document.getElementById('formPanel').style.display = 'none';
   document.getElementById('formPanel').innerHTML = '';
 }
@@ -4192,15 +5319,55 @@ function salvaMovimento(){
   const t = formTotals();
   if(formRighe.length<2 || Math.abs(t.dare-t.avere)>=0.005 || t.dare<=0){ return; }
   if(formRighe.some(r=>!r.codice)){ alert('Seleziona un conto per ogni riga.'); return; }
-  const id = 'm' + (STATE.movimenti.length + 1) + '_' + Date.now().toString(36);
-  STATE.movimenti.push({
-    id,
-    data: formDate || new Date().toISOString().slice(0,10),
-    descrizione: formDesc || 'Registrazione contabile',
-    competenzaDal: formPluriennale ? (formCompDal||null) : null,
-    competenzaAl: formPluriennale ? (formCompAl||null) : null,
-    righe: formRighe.map(r=>({codice:r.codice, dare:Number(r.dare)||0, avere:Number(r.avere)||0, riclass:r.riclass||null})),
+  // Validazione: gli importi non possono essere negativi (il campo consente comunque di
+  // digitarli manualmente, l'attributo min="0" da solo non lo impedisce sempre).
+  if(formRighe.some(r=>(Number(r.dare)||0)<0 || (Number(r.avere)||0)<0)){
+    alert('Gli importi non possono essere negativi.');
+    return;
+  }
+  // Validazione: se pluriennale, la competenza non può finire prima di iniziare.
+  if(formPluriennale && formCompDal && formCompAl && formCompAl < formCompDal){
+    alert('La data "Competenza al" non può essere precedente a "Competenza dal".');
+    return;
+  }
+  // Righe già presenti prima di questa modifica: servono per non perdere il segno "scadenza
+  // saldata" (impostato dallo Scadenzario) quando si corregge la registrazione da qui, dato
+  // che questa form non lo mostra/modifica direttamente.
+  let oldRighe = [];
+  if(movimentoEditId){
+    const existing = STATE.movimenti.find(x=>x.id===movimentoEditId);
+    if(existing) oldRighe = existing.righe || [];
+  }
+  const righe = formRighe.map((r,i)=>{
+    const riga = {codice:r.codice, dare:Number(r.dare)||0, avere:Number(r.avere)||0, riclass:r.riclass||null, dataScadenza:r.dataScadenza||null};
+    const old = oldRighe[i];
+    if(old && old.scadenzaSaldata){
+      riga.scadenzaSaldata = true;
+      riga.scadenzaSaldataIl = old.scadenzaSaldataIl || null;
+    }
+    return riga;
   });
+  if(movimentoEditId){
+    const m = STATE.movimenti.find(x=>x.id===movimentoEditId);
+    if(m){
+      m.data = formDate || new Date().toISOString().slice(0,10);
+      m.descrizione = formDesc || 'Registrazione contabile';
+      m.competenzaDal = formPluriennale ? (formCompDal||null) : null;
+      m.competenzaAl = formPluriennale ? (formCompAl||null) : null;
+      m.righe = righe;
+      m.modificatoIl = new Date().toISOString();
+    }
+  } else {
+    const id = 'm' + (STATE.movimenti.length + 1) + '_' + Date.now().toString(36);
+    STATE.movimenti.push({
+      id,
+      data: formDate || new Date().toISOString().slice(0,10),
+      descrizione: formDesc || 'Registrazione contabile',
+      competenzaDal: formPluriennale ? (formCompDal||null) : null,
+      competenzaAl: formPluriennale ? (formCompAl||null) : null,
+      righe,
+    });
+  }
   saveState();
   chiudiForm();
   renderAll();
@@ -4379,7 +5546,99 @@ function salvaModello(){
   renderModelli();
 }
 
+document.getElementById('btnStampaBilancio').addEventListener('click', ()=> window.print());
+document.getElementById('btnExportBilancioCsv').addEventListener('click', ()=> esportaBilancioCsv());
+
 // ---------- Export / Import ----------
+function csvEscape(v){
+  const s = String(v===null||v===undefined ? '' : v);
+  if(/[",;\n]/.test(s)) return '"' + s.replace(/"/g,'""') + '"';
+  return s;
+}
+function downloadCsv(rows, filename){
+  const csv = rows.map(row=>row.map(csvEscape).join(';')).join('\r\n');
+  const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 2000);
+}
+function giornaleCsvRows(){
+  const rows = [['Data','Descrizione','Codice conto','Conto','Dare','Avere','Etichetta','Pluriennale','Competenza dal','Competenza al']];
+  const list = activeMovimenti(STATE).slice().sort((a,b)=> new Date(a.data)-new Date(b.data));
+  for(const m of list){
+    for(const r of m.righe){
+      const p = PIANO_INDEX[String(r.codice)];
+      rows.push([
+        fmtDate(m.data), m.descrizione, r.codice, p?p.conto:'',
+        r.dare||0, r.avere||0, r.riclass||'', isPluriennale(m)?'Sì':'No',
+        m.competenzaDal?fmtDate(m.competenzaDal):'', m.competenzaAl?fmtDate(m.competenzaAl):''
+      ]);
+    }
+  }
+  return rows;
+}
+document.getElementById('btnExportCsv').addEventListener('click', ()=>{
+  downloadCsv(giornaleCsvRows(), 'libro-giornale.csv');
+});
+
+// ---------- Export CSV per Excel del Bilancio (fotografia Excel o calcolato dai movimenti) ----------
+function esportaBilancioCsv(){
+  const idx = PIANO_INDEX;
+  if(bilState.mode === 'excel'){
+    const bf = STATE.bilancioFormale;
+    const anno = ANNI[bilState.year];
+    const rows = [['Sezione','Voce','Anno',`Valore`]];
+    const pushRows = (sezione, list) => {
+      for(const r of list.filter(x=>rowVisible(x, bilState.year))){
+        if(r.label==='STATO PATRIMONIALE' || r.label==='Attivo' || r.label==='Passivo') continue;
+        const v = r.values ? r.values[bilState.year] : null;
+        rows.push([sezione, r.label, anno, (v===null||v===undefined) ? '' : v]);
+      }
+    };
+    if(bilState.sub === 'sp'){
+      pushRows('Attivo', bf.attivo);
+      pushRows('Passivo', bf.passivo);
+    } else {
+      pushRows('Conto Economico', bf.ce);
+    }
+    downloadCsv(rows, `bilancio-excel-${bilState.sub}-${anno}.csv`);
+  } else {
+    const {periodStart, periodEnd, accrual} = bilState;
+    if(bilState.sub === 'sp'){
+      const acc = computeSPAsOf(STATE, periodEnd);
+      const rows = [['Sezione','Codice conto','Conto','Saldo','Lato','Data']];
+      for(const g of PIANO_GROUPS){
+        for(const it of g.items){
+          const a = acc[String(it.codice)];
+          if(!a) continue;
+          const raw = (a.dare||0)-(a.avere||0);
+          const mag = Math.abs(raw);
+          if(mag <= 0.005) continue;
+          rows.push([g.title, it.codice, it.conto, mag, raw>=0?'Dare':'Avere', fmtDate(periodEnd)]);
+        }
+      }
+      downloadCsv(rows, `bilancio-periodo-sp-${periodEnd}.csv`);
+    } else {
+      const acc = computeCEPeriodo(STATE, periodStart, periodEnd, accrual);
+      const rows = [['Codice conto','Conto','Saldo','Lato','Dal','Al','Ripartizione pro-quota']];
+      for(const g of PIANO_GROUPS){
+        for(const it of g.items){
+          const p = idx[String(it.codice)];
+          if(!p || !(p.tipo==='Conto economico' || p.tipo==='Conto economico rettificativo')) continue;
+          const a = acc[String(it.codice)];
+          if(!a) continue;
+          const raw = (a.dare||0)-(a.avere||0);
+          const mag = Math.abs(raw);
+          if(mag <= 0.005) continue;
+          rows.push([it.codice, it.conto, mag, raw>=0?'Costo':'Ricavo', fmtDate(periodStart), fmtDate(periodEnd), accrual?'Sì':'No']);
+        }
+      }
+      downloadCsv(rows, `bilancio-periodo-ce-${periodStart}_${periodEnd}.csv`);
+    }
+  }
+}
 document.getElementById('btnExport').addEventListener('click', ()=>{
   const blob = new Blob([JSON.stringify(STATE, null, 2)], {type:'application/json'});
   const url = URL.createObjectURL(blob);
@@ -4409,6 +5668,116 @@ document.getElementById('importFile').addEventListener('change', (e)=>{
     e.target.value = '';
   };
   reader.readAsText(file);
+});
+
+// ---------- Backup (.zip) ----------
+// Costruttore ZIP minimale in JavaScript puro (nessuna libreria esterna, coerente con il
+// resto della pagina): metodo STORE, cioè file salvati senza compressione. Basta per un
+// backup occasionale di pochi file di testo/JSON: non serve comprimere per risparmiare
+// spazio, e si evita di dover caricare una libreria da internet.
+function crc32(bytes){
+  let c, crc = 0xFFFFFFFF;
+  for(let i=0; i<bytes.length; i++){
+    c = (crc ^ bytes[i]) & 0xFF;
+    for(let k=0; k<8; k++){ c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1); }
+    crc = (crc >>> 8) ^ c;
+  }
+  return (crc ^ 0xFFFFFFFF) >>> 0;
+}
+function dosDateTime(d){
+  const time = ((d.getHours()&0x1F)<<11) | ((d.getMinutes()&0x3F)<<5) | ((Math.floor(d.getSeconds()/2))&0x1F);
+  const date = (((d.getFullYear()-1980)&0x7F)<<9) | (((d.getMonth()+1)&0xF)<<5) | (d.getDate()&0x1F);
+  return {time, date};
+}
+function buildZip(files){ // files: [{name, content(string)}]
+  const enc = new TextEncoder();
+  const {time, date} = dosDateTime(new Date());
+  const localParts = [], centralParts = [];
+  let offset = 0;
+  for(const f of files){
+    const nameBytes = enc.encode(f.name);
+    const dataBytes = enc.encode(f.content);
+    const crc = crc32(dataBytes);
+    const size = dataBytes.length;
+
+    const localHeader = new Uint8Array(30 + nameBytes.length);
+    const lv = new DataView(localHeader.buffer);
+    lv.setUint32(0, 0x04034b50, true);
+    lv.setUint16(4, 20, true);      // versione minima
+    lv.setUint16(6, 0, true);       // flag
+    lv.setUint16(8, 0, true);       // metodo: 0 = STORE (senza compressione)
+    lv.setUint16(10, time, true);
+    lv.setUint16(12, date, true);
+    lv.setUint32(14, crc, true);
+    lv.setUint32(18, size, true);   // compressed size
+    lv.setUint32(22, size, true);   // uncompressed size
+    lv.setUint16(26, nameBytes.length, true);
+    lv.setUint16(28, 0, true);      // extra field length
+    localHeader.set(nameBytes, 30);
+
+    localParts.push(localHeader, dataBytes);
+
+    const centralHeader = new Uint8Array(46 + nameBytes.length);
+    const cv = new DataView(centralHeader.buffer);
+    cv.setUint32(0, 0x02014b50, true);
+    cv.setUint16(4, 20, true);      // versione creatrice
+    cv.setUint16(6, 20, true);      // versione minima
+    cv.setUint16(8, 0, true);
+    cv.setUint16(10, 0, true);
+    cv.setUint16(12, time, true);
+    cv.setUint16(14, date, true);
+    cv.setUint32(16, crc, true);
+    cv.setUint32(20, size, true);
+    cv.setUint32(24, size, true);
+    cv.setUint16(28, nameBytes.length, true);
+    cv.setUint16(30, 0, true);
+    cv.setUint16(32, 0, true);
+    cv.setUint16(34, 0, true);
+    cv.setUint16(36, 0, true);
+    cv.setUint32(38, 0, true);
+    cv.setUint32(42, offset, true);
+    centralHeader.set(nameBytes, 46);
+    centralParts.push(centralHeader);
+
+    offset += localHeader.length + dataBytes.length;
+  }
+  const centralSize = centralParts.reduce((s,p)=>s+p.length, 0);
+  const centralOffset = offset;
+  const eocd = new Uint8Array(22);
+  const ev = new DataView(eocd.buffer);
+  ev.setUint32(0, 0x06054b50, true);
+  ev.setUint16(4, 0, true);
+  ev.setUint16(6, 0, true);
+  ev.setUint16(8, files.length, true);
+  ev.setUint16(10, files.length, true);
+  ev.setUint32(12, centralSize, true);
+  ev.setUint32(16, centralOffset, true);
+  ev.setUint16(20, 0, true);
+
+  return new Blob([...localParts, ...centralParts, eocd], {type:'application/zip'});
+}
+document.getElementById('btnBackup').addEventListener('click', ()=>{
+  const stamp = new Date().toISOString().slice(0,10);
+  const csvRows = giornaleCsvRows();
+  const csvText = '﻿' + csvRows.map(row=>row.map(csvEscape).join(';')).join('\r\n');
+  const leggimi = `Backup Nordev — Contabilità\nCreato il: ${fmtDate(stamp)}\n\n` +
+    `Contenuto:\n` +
+    `- data.json → tutti i dati (piano dei conti, movimenti, modelli). Per ripristinarli, apri la pagina dell'app e usa "Importa dati" con questo file.\n` +
+    `- libro-giornale.csv → lo stesso libro giornale in un formato leggibile anche fuori dall'app (si apre in Excel).\n\n` +
+    `Questo è un backup manuale: per averne uno aggiornato, ripeti il download quando vuoi (es. dopo aver registrato nuove operazioni).`;
+  const blob = buildZip([
+    {name:'data.json', content: JSON.stringify(STATE, null, 2)},
+    {name:'libro-giornale.csv', content: csvText},
+    {name:'LEGGIMI.txt', content: leggimi},
+  ]);
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `backup-nordev-contabilita-${stamp}.zip`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 2000);
 });
 
 // ---------- init ----------
